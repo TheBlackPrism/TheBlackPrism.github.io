@@ -1,20 +1,19 @@
 body {
-	background: darkred;
-    color: white;
-    text-shadow: 5px 5px 10px black;
+  background: darkred;
+  color: white;
+  text-shadow: 5px 5px 10px black;
 }
 
-*{
-	font-family: 'Nunito';
+* {
+  font-family: 'Nunito';
 }
 
-#particles-js{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    top: 0px;
-    left: 0px;
-
-    pointer-events: none;
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0px;
+  left: 0px;
+  pointer-events: none;
 }
