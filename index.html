@@ -7,13 +7,14 @@
   <title>The Black Prism</title>
   <meta name="description" content="some very important website">
   <meta name="author" content="TheBlackPrism">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link rel="stylesheet" href="./css/styles.css">
   <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 
   <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
@@ -25,100 +26,1058 @@
 </head>
 
 <body>
-  <h1>Welcome To Black Prisms Homepage</h1>
 
-  <marquee behavior="alternate">Lorem ipsum dolor sit amet,
-    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-    dolore magna aliqua. Eget duis at tellus at urna condimentum mattis.
-    Pellentesque nec nam aliquam sem et tortor consequat id. Morbi leo urna molestie
-    at elementum eu facilisis. Erat pellentesque adipiscing commodo elit at
-    imperdiet. Fermentum leo vel orci porta non pulvinar neque. Hendrerit dolor
-    magna eget est lorem ipsum dolor sit amet. Sit amet mattis vulputate enim nulla.
-    Rutrum quisque non tellus orci ac. Ultrices in iaculis nunc sed augue lacus
-    viverra vitae. Nec ullamcorper sit amet risus. Sed vulputate odio ut enim
-    blandit volutpat maecenas. Netus et malesuada fames ac turpis egestas sed tempus
-    urna. Quis auctor elit sed vulputate mi sit amet mauris commodo. Nunc id cursus
-    metus aliquam eleifend. Tellus molestie nunc non blandit massa. Vestibulum
-    mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare massa. Dictum at
-    tempor commodo ullamcorper a lacus. Vitae purus faucibus ornare suspendisse sed
-    nisi.</marquee>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="newsbox-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="newsboxNav">
+
+                        <!-- Nav brand -->
+                        <a href="index.html" class="nav-brand"><b>TheBlackPrism</b></a>
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="#">Blog</a>
+                                        <ul class="dropdown">
+                                            <li><a href="#">Artificial Intelligence</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Photos</a>
+                                        <ul class="dropdown">
+                                            <li><a href="index.html">All Photos</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">About</a></li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Breaking News Area Start ##### -->
+    <section class="breaking-news-area">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Breaking News Widget -->
+                    <div class="breaking-news-ticker d-flex flex-wrap align-items-center">
+                        <div class="title">
+                            <h6>Trending</h6>
+                        </div>
+                        <div id="breakingNewsTicker" class="ticker">
+                            <ul>
+                                <li><a href="#">Welcome to The Black Prisms Homepage</a></li>
+                                <li><a href="#">Read the newest Blog about Artificial Intelligence</a></li>
+                                <li><a href="#">New Pictures are live! Check them out now</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Breaking News Area End ##### -->
+
+    <!-- ##### Hero Area Start ##### -->
+    <div class="hero-area">
+        <!-- Hero Post Slides -->
+        <div class="hero-post-slides owl-carousel">
+
+            <!-- Single Slide -->
+            <div class="single-slide">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Single Blog Post Area -->
+                        <div class="col-12 col-md-6">
+                            <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="100ms" data-duration="1000ms">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail bg-overlay">
+                                    <a href="#"><img src="img/bg-img/1.jpg" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Traffic Problems in Time Square</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <!-- Single Blog Post Area -->
+                            <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="300ms" data-duration="1000ms">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail bg-overlay">
+                                    <a href="#"><img src="img/bg-img/2.jpg" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">The best way to spend your holliday</a>
+                                </div>
+                            </div>
+                            <!-- Single Blog Post Area -->
+                            <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="500ms" data-duration="1000ms">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail bg-overlay">
+                                    <a href="#"><img src="img/bg-img/3.jpg" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Sport results for the weekend games</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Slide -->
+            <div class="single-slide">
+                <div class="container-fluid">
+                    <div class="row">
+                        <!-- Single Blog Post Area -->
+                        <div class="col-12 col-md-6">
+                            <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="100ms" data-duration="1000ms">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail bg-overlay">
+                                    <a href="#"><img src="img/bg-img/1.jpg" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Traffic Problems in Time Square</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6">
+                            <!-- Single Blog Post Area -->
+                            <div class="single-blog-post style-1 mb-30" data-animation="fadeInUpBig" data-delay="300ms" data-duration="1000ms">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail bg-overlay">
+                                    <a href="#"><img src="img/bg-img/2.jpg" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">The best way to spend your holliday</a>
+                                </div>
+                            </div>
+                            <!-- Single Blog Post Area -->
+                            <div class="single-blog-post style-1" data-animation="fadeInUpBig" data-delay="500ms" data-duration="1000ms">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail bg-overlay">
+                                    <a href="#"><img src="img/bg-img/3.jpg" alt=""></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <a href="#" class="post-title">Sport results for the weekend games</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- ##### Hero Area End ##### -->
+
+    <!-- ##### Intro News Area Start ##### -->
+    <section class="intro-news-area section-padding-100-0 mb-70" >
+        <div class="container">
+            <div class="row justify-content-center">
+                <!-- Intro News Tabs Area -->
+                <div class="col-12 col-lg-8">
+                    <div class="intro-news-tab">
+
+                        <!-- Intro News Filter -->
+                        <div class="intro-news-filter d-flex justify-content-between">
+                            <h6>All the news</h6>
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <a class="nav-item nav-link active" id="nav1" data-toggle="tab" href="#nav-1" role="tab" aria-controls="nav-1" aria-selected="true">Latest</a>
+                                    <a class="nav-item nav-link" id="nav2" data-toggle="tab" href="#nav-2" role="tab" aria-controls="nav-2" aria-selected="false">Popular</a>
+                                    <a class="nav-item nav-link" id="nav3" data-toggle="tab" href="#nav-3" role="tab" aria-controls="nav-3" aria-selected="false">International</a>
+                                    <a class="nav-item nav-link" id="nav4" data-toggle="tab" href="#nav-4" role="tab" aria-controls="nav-4" aria-selected="false">Local</a>
+                                </div>
+                            </nav>
+                        </div>
+
+                        <div class="tab-content" id="nav-tabContent">
+
+                            <div class="tab-pane fade show active" id="nav-1" role="tabpanel" aria-labelledby="nav1">
+                                <div class="row">
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/14.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
+                                                <a href="#" class="post-author">By Michael Smith</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/15.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis</a>
+                                                <a href="#" class="post-author">By Michael Smith</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/16.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/17.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/18.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/19.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/20.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/21.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-2" role="tabpanel" aria-labelledby="nav2">
+                                <div class="row">
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/4.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
+                                                <a href="#" class="post-author">By Michael Smith</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/5.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis</a>
+                                                <a href="#" class="post-author">By Michael Smith</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/16.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/17.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/18.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/19.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/20.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/21.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-3" role="tabpanel" aria-labelledby="nav3">
+                                <div class="row">
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/6.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
+                                                <a href="#" class="post-author">By Michael Smith</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/7.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis</a>
+                                                <a href="#" class="post-author">By Michael Smith</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/16.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/17.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/18.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/19.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/20.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/21.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-4" role="tabpanel" aria-labelledby="nav4">
+                                <div class="row">
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/8.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
+                                                <a href="#" class="post-author">By Michael Smith</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post style-2 mb-5">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/9.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis</a>
+                                                <a href="#" class="post-author">By Michael Smith</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/16.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/17.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Nearly a quarter have no emergency savings</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/18.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/19.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Top bitcoin exchange says over $30 million stolen</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/20.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Single News Area -->
+                                    <div class="col-12 col-sm-6">
+                                        <div class="single-blog-post d-flex style-4 mb-30">
+                                            <!-- Blog Thumbnail -->
+                                            <div class="blog-thumbnail">
+                                                <a href="#"><img src="img/bg-img/21.jpg" alt=""></a>
+                                            </div>
+
+                                            <!-- Blog Content -->
+                                            <div class="blog-content">
+                                                <span class="post-date">June 20, 2018</span>
+                                                <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Widget -->
+                <div class="col-12 col-sm-9 col-md-6 col-lg-4">
+                    <div class="sidebar-area">
+
+                        <!-- Newsletter Widget -->
+                        <div class="single-widget-area newsletter-widget mb-30">
+                            <h4>Subscribe to our newsletter</h4>
+                            <form action="#" method="post">
+                                <input type="email" name="nl-email" id="nlemail" placeholder="Your E-mail">
+                                <button type="submit" class="btn newsbox-btn w-100">Subscribe</button>
+                            </form>
+                            <p class="mt-30">Nullam lacinia ex eleifend orci porttitor, suscipit interdum augue condimentum. Etiam pretium turpis eget nibh . volutpat lobortis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Intro News Area End ##### -->
+
+    <!-- ##### Video Area Start ##### -->
+    <section class="video-area bg-img bg-overlay bg-fixed" style="background-image: url(img/bg-img/10.jpg);">
+        <div class="container">
+            <div class="row">
+                <!-- Featured Video Area -->
+                <div class="col-12">
+                    <div class="featured-video-area d-flex align-items-center justify-content-center">
+                        <div class="video-content text-center">
+                            <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
+                            <span class="published-date">June 20, 2018</span>
+                            <h3 class="video-title">Traffic Problems in Time Square</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Video Slideshow -->
+        <div class="video-slideshow py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Video Slides -->
+                        <div class="video-slides owl-carousel">
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post style-3">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="img/bg-img/11.jpg" alt=""></a>
+                                    <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <p class="post-title">Elon Musk: Tesla worker admitted to sabotage</p>
+                                    <a href="#" class="post-author">By Michael Smith</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post style-3">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="img/bg-img/12.jpg" alt=""></a>
+                                    <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <p class="post-title">Rachel Sm ith breaks down while discussing border crisis </p>
+                                    <a href="#" class="post-author">By Michael Smith</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post style-3">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="img/bg-img/13.jpg" alt=""></a>
+                                    <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <p class="post-title">Dow falls 287 points as trade war fears escalate</p>
+                                    <a href="#" class="post-author">By Michael Smith</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post style-3">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="img/bg-img/11.jpg" alt=""></a>
+                                    <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <p class="post-title">Elon Musk: Tesla worker admitted to sabotage</p>
+                                    <a href="#" class="post-author">By Michael Smith</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post style-3">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="img/bg-img/12.jpg" alt=""></a>
+                                    <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <p class="post-title">Rachel Sm ith breaks down while discussing border crisis </p>
+                                    <a href="#" class="post-author">By Michael Smith</a>
+                                </div>
+                            </div>
+
+                            <!-- Single News Area -->
+                            <div class="single-blog-post style-3">
+                                <!-- Blog Thumbnail -->
+                                <div class="blog-thumbnail">
+                                    <a href="#"><img src="img/bg-img/13.jpg" alt=""></a>
+                                    <a href="#" class="video-btn"><i class="fa fa-play" aria-hidden="true"></i></a>
+                                </div>
+
+                                <!-- Blog Content -->
+                                <div class="blog-content">
+                                    <span class="post-date">June 20, 2018</span>
+                                    <p class="post-title">Dow falls 287 points as trade war fears escalate</p>
+                                    <a href="#" class="post-author">By Michael Smith</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ##### Video Area End ##### -->
+
+    <!-- ##### Top News Area Start ##### -->
+    <div class="top-news-area section-padding-100">
+        <div class="container">
+            <div class="row">
+
+                <!-- Single News Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-blog-post style-2 mb-5">
+                        <!-- Blog Thumbnail -->
+                        <div class="blog-thumbnail">
+                            <a href="#"><img src="img/bg-img/4.jpg" alt=""></a>
+                        </div>
+
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <span class="post-date">June 20, 2018</span>
+                            <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
+                            <a href="#" class="post-author">By Michael Smith</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single News Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-blog-post style-2 mb-5">
+                        <!-- Blog Thumbnail -->
+                        <div class="blog-thumbnail">
+                            <a href="#"><img src="img/bg-img/5.jpg" alt=""></a>
+                        </div>
+
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <span class="post-date">June 20, 2018</span>
+                            <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis </a>
+                            <a href="#" class="post-author">By Michael Smith</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single News Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-blog-post style-2 mb-5">
+                        <!-- Blog Thumbnail -->
+                        <div class="blog-thumbnail">
+                            <a href="#"><img src="img/bg-img/6.jpg" alt=""></a>
+                        </div>
+
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <span class="post-date">June 20, 2018</span>
+                            <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                            <a href="#" class="post-author">By Michael Smith</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single News Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-blog-post style-2 mb-5">
+                        <!-- Blog Thumbnail -->
+                        <div class="blog-thumbnail">
+                            <a href="#"><img src="img/bg-img/7.jpg" alt=""></a>
+                        </div>
+
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <span class="post-date">June 20, 2018</span>
+                            <a href="#" class="post-title">Elon Musk: Tesla worker admitted to sabotage</a>
+                            <a href="#" class="post-author">By Michael Smith</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single News Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-blog-post style-2 mb-5">
+                        <!-- Blog Thumbnail -->
+                        <div class="blog-thumbnail">
+                            <a href="#"><img src="img/bg-img/8.jpg" alt=""></a>
+                        </div>
+
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <span class="post-date">June 20, 2018</span>
+                            <a href="#" class="post-title">Rachel Sm ith breaks down while discussing border crisis </a>
+                            <a href="#" class="post-author">By Michael Smith</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Single News Area -->
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-blog-post style-2 mb-5">
+                        <!-- Blog Thumbnail -->
+                        <div class="blog-thumbnail">
+                            <a href="#"><img src="img/bg-img/9.jpg" alt=""></a>
+                        </div>
+
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <span class="post-date">June 20, 2018</span>
+                            <a href="#" class="post-title">Dow falls 287 points as trade war fears escalate</a>
+                            <a href="#" class="post-author">By Michael Smith</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="load-more-button text-center">
+                        <a href="#" class="btn newsbox-btn">Load More</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- ##### Top News Area End ##### -->
 
 
-  <p data-lax-preset="zoomInOut">Eu consequat ac felis donec et odio pellentesque. Eu mi bibendum neque
-    egestas congue quisque egestas. Arcu non sodales neque sodales ut etiam.
-    Interdum posuere lorem ipsum dolor sit amet. Phasellus egestas tellus rutrum
-    tellus pellentesque eu tincidunt tortor aliquam. Morbi tristique senectus et
-    netus et malesuada fames. Lectus sit amet est placerat in egestas. Lorem dolor
-    sed viverra ipsum nunc aliquet bibendum enim. Viverra justo nec ultrices dui.
-    Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus. Id
-    semper risus in hendrerit. Nec feugiat nisl pretium fusce id velit ut. Mauris
-    rhoncus aenean vel elit scelerisque mauris pellentesque pulvinar pellentesque.
-    Posuere urna nec tincidunt praesent. Scelerisque eu ultrices vitae auctor eu
-    augue ut lectus arcu. Et pharetra pharetra massa massa. Praesent elementum
-    facilisis leo vel fringilla est ullamcorper. A condimentum vitae sapien
-    pellentesque. Sagittis id consectetur purus ut faucibus.</p>
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <!-- Footer Logo -->
+        <div class="footer-logo mb-100">
+            <a href="index.html">The Black Prism</a>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
 
-  <p data-lax-preset="slalom">Arcu non sodales neque sodales ut etiam. Id porta nibh venenatis cras. Non
-    nisi est sit amet facilisis magna etiam. Est ullamcorper eget nulla facilisi
-    etiam. Posuere lorem ipsum dolor sit amet consectetur adipiscing elit duis.
-    Lorem mollis aliquam ut porttitor. Felis imperdiet proin fermentum leo vel
-    orci porta. Pellentesque elit eget gravida cum sociis. Nec sagittis aliquam
-    malesuada bibendum arcu vitae. Ut placerat orci nulla pellentesque dignissim.
-    Tempor commodo ullamcorper a lacus vestibulum. Dictum varius duis at
-    consectetur lorem donec massa. Ut consequat semper viverra nam libero. Ac
-    placerat vestibulum lectus mauris ultrices eros in cursus turpis. Auctor elit
-    sed vulputate mi sit. Tincidunt dui ut ornare lectus sit amet. Pharetra
-    convallis posuere morbi leo urna molestie at elementum eu.</p>
+    <div id="particles-js"></div>
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/main.js"></script>
 
-
-  <p data-lax-preset="leftToRight">Id eu nisl nunc mi ipsum faucibus vitae aliquet. Arcu non sodales neque
-    sodales. Egestas purus viverra accumsan in nisl. Id consectetur purus ut
-    faucibus pulvinar. Malesuada nunc vel risus commodo viverra maecenas accumsan.
-    Imperdiet massa tincidunt nunc pulvinar sapien et ligula ullamcorper
-    malesuada. Proin fermentum leo vel orci porta non. Id venenatis a condimentum
-    vitae sapien. Semper quis lectus nulla at volutpat diam ut. Duis ut diam quam
-    nulla porttitor massa id. Leo a diam sollicitudin tempor id. Egestas erat
-    imperdiet sed euismod. At tellus at urna condimentum. Nibh tortor id aliquet
-    lectus proin. Augue ut lectus arcu bibendum at. Purus non enim praesent
-    elementum. Nullam ac tortor vitae purus faucibus ornare suspendisse. Cras
-    tincidunt lobortis feugiat vivamus at augue.</p>
-
-
-  <p data-lax-preset="spin fadeInOut">Look at me goooooo!</p>
-
-  <p data-lax-preset="blurIn">Non arcu risus quis varius quam. Ut tellus elementum sagittis vitae et. Leo
-    in vitae turpis massa sed elementum tempus egestas sed. Sed enim ut sem
-    viverra aliquet eget sit amet tellus. Convallis convallis tellus id interdum
-    velit laoreet id donec. Enim eu turpis egestas pretium aenean pharetra magna
-    ac placerat. Quam viverra orci sagittis eu volutpat odio facilisis mauris sit.
-    Scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt. Non
-    odio euismod lacinia at. Nisl pretium fusce id velit ut tortor pretium viverra
-    suspendisse. Faucibus purus in massa tempor nec feugiat. Eu facilisis sed odio
-    morbi. Netus et malesuada fames ac turpis egestas integer. Commodo quis
-    imperdiet massa tincidunt. Purus faucibus ornare suspendisse sed nisi lacus
-    sed viverra tellus. Tristique senectus et netus et malesuada fames ac turpis
-    egestas. Aliquam sem fringilla ut morbi tincidunt. Ac auctor augue mauris
-    augue. Varius duis at consectetur lorem donec.</p>
-
-  <!--Thanks to Hydranauts-Team for the particles-->
-  <div id="particles-js"></div>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-  <script src='./js/main.js'></script>
-  <script src="node_modules/lax.js/lib/lax.min.js"></script>
-  <script>
-    window.onload = function() {
-      lax.setup({
-        /* opts */ }) // init
-
-      document.addEventListener('scroll', function(e) {
-        lax.update(window.scrollY) // update every scroll
-      }, false)
-
-      lax.update(window.scrollY) // set initial positions
-    }
-  </script>
 </body>
 
 </html>
