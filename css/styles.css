@@ -18,6 +18,16 @@
   pointer-events: none;
 }
 
+.nav-brand{
+  font-size: 50px !important;
+  font-weight: bolder;
+  white-space: nowrap;
+}
+
+.title{
+  background-color: darkred !important;
+}
+
 /* :: 3.0 Base CSS */
 * {
   margin: 0;
