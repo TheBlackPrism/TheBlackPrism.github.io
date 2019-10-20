@@ -55,7 +55,12 @@ p {
   line-height: 1.5;
   font-weight: 400; }
 
+.subtitle{
+  margin-top: 00px;
+}
+
 h4 {
+  margin-top: 30px;
   font-size: 20px;
   color: #404040;
 }
@@ -87,7 +92,9 @@ ol {
 
 .article-image-rect{
   width: 300px;
-  margin-bottom: 40px;
+}
+figure{
+  margin-bottom: 20px;
 }
 
 .titleimage {
