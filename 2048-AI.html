@@ -92,17 +92,22 @@
         <!-- ##### Hero Area Start ##### -->
         <div class="section-padding-200">
           <div class="container">
-            <h2>An approach to beat 2048 with AI<br/>
-            <h4>By Jennifer Schürch & Yves Lütjens</h4>
+            <h2>Artificial Intelligence for 2048</h2>
+            <h4>An approach to beat 2048 with AI</h4>
+            <h5>By Jennifer Schürch & Yves Lütjens</h5>
             <p>The game 2048 is a hard game to beat. As there are many random variables during play, one has a hard time to implement a good algorithm for it.
             We started of by implemented a heuristic algorithm and set the aim that it can reach 10'000 points in average.<br>
             </p>
-            <h5>Heuristic</h5>
+            <h4>Heuristic</h4>
             <p>Our first approach consisted of creating an algorithm which moved alternately down and right and as soon as he was stuck trying to find if the
               bottom row or the lefthand row was empty and move in that direction if one is indeed. the idea behind that was to keep the highest tile in the bottom right corner.
-              After a short time we realised that this strategy will bear fruit as it's average score was around 3'500, so we discarded our algorithm and started over. This time we made an algorithm that will make two
-              steps in the future in every possible direction and assess the board at that stage. We valued the board by a score which was depending on the position of the tiles.
-              
+              After a short time we realised that this strategy will not bear fruit as it's average score was around 3'500, so we discarded our algorithm and started over. This time we made an algorithm that will make two
+              steps in the future in every possible direction and assessed the board at that stage. We valued the board by a score which was strongly depending on the position of the tiles.
+              The better a tile was positioned, the higher the factor it's value was multiplied with. A good position was the closenes to the bottom right corner, and the tile in the corner itself got a hefty bonus
+              to force the algorithm to keep the highest value there. These improvements got us way closer to our aim. The algorithm scored an average of 7'000 points.<br>
+              We further improved it by giving a neighbourbonus for tiles of the same value, and weighted empty tiles too, so the algorithm had more interest in merging tiles.
+              This small tweaks pushed our algorithm slightly over the 10'000 points average threshold.
+            </p>
           </div>
         </div>
 
