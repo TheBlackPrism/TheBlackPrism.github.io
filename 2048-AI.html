@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>The Black Prism</title>
+  <meta name="description" content="some very important website">
+  <meta name="author" content="TheBlackPrism">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="./css/styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+
+  <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <meta property="og:title" content="Prism" />
+  <meta property="og:url" content="http://blackprism.tk" />
+  <meta property="og:image" content="https://blackprism.tk/images/Prism.jpeg" />
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+        <!-- ##### Header Area Start ##### -->
+        <header class="header-area">
+            <!-- Navbar Area -->
+            <div class="newsbox-main-menu">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container-fluid">
+                        <!-- Menu -->
+                        <nav class="classy-navbar justify-content-between" id="newsboxNav">
+
+                            <!-- Nav brand -->
+                            <a href="index.html" class="nav-brand">The Black Prism</a>
+                            <!-- Navbar Toggler -->
+                            <div class="classy-navbar-toggler">
+                                <span class="navbarToggler"><span></span><span></span><span></span></span>
+                            </div>
+
+                            <!-- Menu -->
+                            <div class="classy-menu">
+
+                                <!-- Close Button -->
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                                </div>
+
+                                <!-- Nav Start -->
+                                <div class="classynav">
+                                    <ul>
+                                        <li><a href="#">Blog</a>
+                                            <ul class="dropdown">
+                                                <li><a href="#">All Blogs</a></li>
+                                                <li><a href="#">Artificial Intelligence</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Photos</a>
+                                            <ul class="dropdown">
+                                                <li><a href="index.html">All Photos</a></li>
+                                                <li><a href="index.html">Africa</a></li>
+                                                <li><a href="index.html">Mountains</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">About</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Nav End -->
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ##### Header Area End ##### -->
+
+        <!-- ##### Hero Area Start ##### -->
+        <div class="section-padding-200">
+          <div class="container">
+            <h2>An approach to beat 2048 with AI<br/>
+            <h4>By Jennifer Schürch & Yves Lütjens</h4>
+            <p>The game 2048 is a hard game to beat. As there are many random variables during play, one has a hard time to implement a good algorithm for it.
+            We started of by implemented a heuristic algorithm and set the aim that it can reach 10'000 points in average.<br>
+            </p>
+            <h5>Heuristic</h5>
+            <p>Our first approach consisted of creating an algorithm which moved alternately down and right and as soon as he was stuck trying to find if the
+              bottom row or the lefthand row was empty and move in that direction if one is indeed. the idea behind that was to keep the highest tile in the bottom right corner.
+              After a short time we realised that this strategy will bear fruit as it's average score was around 3'500, so we discarded our algorithm and started over. This time we made an algorithm that will make two
+              steps in the future in every possible direction and assess the board at that stage. We valued the board by a score which was depending on the position of the tiles.
+              
+          </div>
+        </div>
+
+
+
+        <!-- ##### Footer Area Start ##### -->
+        <footer class="footer-area">
+            <!-- Footer Logo -->
+            <div class="footer-logo mb-100">
+                <a href="index.html">The Black Prism</a>
+            </div>
+        </footer>
+        <!-- ##### Footer Area Start ##### -->
+
+        <div id="particles-js"></div>
+        <!-- ##### All Javascript Script ##### -->
+        <!-- jQuery-2.2.4 js -->
+        <script src="js/jquery/jquery-2.2.4.min.js"></script>
+        <!-- Popper js -->
+        <script src="js/bootstrap/popper.min.js"></script>
+        <!-- Bootstrap js -->
+        <script src="js/bootstrap/bootstrap.min.js"></script>
+        <!-- All Plugins js -->
+        <script src="js/plugins/plugins.js"></script>
+        <!-- Active js -->
+        <script src="js/active.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="js/main.js"></script>
+</body>
+</html>

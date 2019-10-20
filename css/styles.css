@@ -50,10 +50,19 @@ h6 {
 
 p {
   font-family: "Nunito";
-  color: #858585;
-  font-size: 15px;
-  line-height: 2;
+  color: #404040;
+  font-size: 18px;
+  line-height: 1.5;
   font-weight: 400; }
+
+h4 {
+  font-size: 20px;
+  color: #404040;
+}
+
+h5 {
+  font-size:
+}
 
 a,
 a:hover,
