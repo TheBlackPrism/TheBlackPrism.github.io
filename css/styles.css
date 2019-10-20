@@ -90,6 +90,17 @@ ol {
   margin-bottom: 40px;
 }
 
+.titleimage {
+  max-height: 590px !important;
+}
+
+th, td{
+  padding: 5px 30px 5px 0px;
+}
+table{
+    border-spacing: 10px;
+}
+
 img {
   height: auto;
   max-width: 100%; }

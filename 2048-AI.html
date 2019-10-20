@@ -105,11 +105,12 @@
               This time we made an algorithm that will make two steps in the future in every possible direction (ignoring the random tile spawn) and assessed the board at that stage. We valued the board
               by a score which was strongly depending on the position of the tiles. The better a tile was positioned, the higher the factor it's value was multiplied with.
               A good position was the closenes to the bottom right corner, and the tile in the corner itself got an additional bonus,
-              to force the algorithm to keep the highest value there. These improvements got us way closer to our aim, overall the algorithm scored an average of 7'000 points.<br>
+              to force the algorithm to keep the highest value there. The board score distribution for this version looked like this:</p>
+              <img class="article-image-rect" src="images/blogs/ai/board_bonus_heuristic.jpg" alt="Bonus distribution Heuristic">
+              <p>These improvements got us way closer to our aim, overall the algorithm scored an average of 7'000 points.<br>
               We further improved it by giving a neighbourbonus for tiles of the same value, and weighted empty tiles too, so the algorithm had more interest in merging tiles.
               This small tweaks finally pushed our algorithm slightly over the 10'000 points threshold.
             </p>
-            <img class="article-image-rect" src="images/blogs/ai/board_bonus_heuristic.jpg" alt="Bonus distribution Heuristic">
             <h4>Expectimax</h4>
             <p>As 2048 contains a random factor in regard of the randomly spawned 2 or 4 value tile, Expectimax is the most obvious approach to implement an AI.
               We used the heuristics score function to value the board, as well as an adaptive depth going from depth one to depth three depending on the number of empty tiles.
@@ -122,7 +123,55 @@
               this measurement destroyed the algorithm and scored lower than the heuristic. We came up with the idea to distribute the factors like a snake and give the corner a hefty bonus, according to the following image:
             </p>
             <img class="article-image-rect" src="images/blogs/ai/board_bonus_search_yves.jpg" alt="Bonus distribution Search Second Iteration">
-            <br><br>
+            <p>The results showed further improvement in the average score up to 44'000 points. The problem was that the algorithm still did not stack the tiles in a perfect descending order.
+              Sometimes small numbers where caught in the bottom left corner which disturbed the system and lead to big problems after the 4096 tile has been reached. Therefor we came up with the sneaky variation of the heuristic.
+              score system. In the sneaky variation we generated an array of big numbers with great distances between each other and in a descending order that would force the AI to fill up all the ranks in the bottom rows.
+              The score distribution looked as follow:
+            </p>
+            <img class="article-image-rect" src="images/blogs/ai/board_bonus_search_snakey.jpg" alt="Bonus distribution Search Third Iteration">
+            <p>This approach finally was the breakthrough we where looking for!<br>
+              With an average score of 73'000 points it exceeded all previous implementations we made by far.
+              Furthermore this variant was alot faster than previous iterations as it only needs to make one
+              matrix multiplication instead of two for loops and multiple if statements.</p>
+            <h4>Conclusion</h4>
+            <table>
+              <caption>Comparison of the implemented expecimax algorithms</caption>
+              <tr>
+                <th>Algorithm Name</th>
+                <th>Highscore</th>
+                <th>Average Score</th>
+                <th>Highest Tile</th>
+                <th>Time Per Move</th>
+              </tr>
+              <tr>
+                <td>Heuristic</td>
+                <td>112'776</td>
+                <td>44'194</td>
+                <td>8192</td>
+                <td>0.1521238</td>
+              </tr>
+              <tr>
+                <td>Snakey</td>
+                <td>164'488</td>
+                <td>73'243</td>
+                <td>8192</td>
+                <td>0.58130573</td>
+              </tr>
+              <tr>
+                <td>Diagonal</td>
+                <td>132'996</td>
+                <td>65'321</td>
+                <td>8192</td>
+                <td>0.54674995</td>
+              </tr>
+              <tr>
+                <td>Square</td>
+                <td>36'772</td>
+                <td>19'658</td>
+                <td>2048</td>
+                <td>0.08806930</td>
+              </tr>
+            </table>
           </div>
         </div>
 
