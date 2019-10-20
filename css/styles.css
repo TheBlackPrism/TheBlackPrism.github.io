@@ -85,6 +85,11 @@ ol {
   ol li {
     list-style: none; }
 
+.article-image-rect{
+  width: 300px;
+  margin-bottom: 40px;
+}
+
 img {
   height: auto;
   max-width: 100%; }
@@ -114,6 +119,9 @@ img {
 .mb-50 {
   margin-bottom: 50px !important; }
 
+.mb-50 {
+    margin-bottom: 55px !important; }
+
 .mb-70 {
   margin-bottom: 70px !important; }
 
@@ -139,6 +147,9 @@ img {
   margin-right: 50px !important; }
 
 /* :: 3.2.0 Height */
+.height-300 {
+  height: 300px !important; }
+
 .height-400 {
   height: 400px !important; }
 
