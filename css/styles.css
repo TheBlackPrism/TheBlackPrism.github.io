@@ -93,6 +93,11 @@ ol {
 .article-image-rect{
   width: 300px;
 }
+
+.article-statistic{
+  height: 300px;
+}
+
 figure{
   margin-bottom: 20px;
 }
