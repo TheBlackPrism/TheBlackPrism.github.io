@@ -110,7 +110,7 @@
               to force the algorithm to keep the highest value there. The board score distribution for this version looked like this:</p>
               <figure>
                 <img class="article-image-rect" src="images/blogs/ai/board_bonus_heuristic.jpg" alt="Bonus distribution heuristic">
-                <figcaption>Bonus Distribution Heuristic</figcaption>
+                <figcaption>Bonus distribution Hierarchical</figcaption>
               </figure>
               <p>These improvements got us way closer to our aim, overall the algorithm scored an average of 7'000 points.<br>
               We further improved it by giving a neighbourbonus which we had in the Check Score algorithm, for tiles of the same value and weighted empty tiles too, so the algorithm had more interest in merging tiles.
@@ -135,7 +135,7 @@
             </figure>
             <h4>Expectimax</h4>
             <p>As 2048 contains a random factor in regard of the randomly spawned 2 or 4 value tile, Expectimax is the most obvious approach to implement an AI.
-              We used the heuristics score function to value the board, as well as an adaptive depth going from depth one to depth three depending on the number of empty tiles.
+              We used the Hierarchicals heuristics score function (called Heuristic in the following) to value the board, as well as an adaptive depth going from depth one to depth three depending on the number of empty tiles.
               This allowed us to speed up the early phase of the game, as depth 3 with our score function needed up to 10 seconds for a move, depending on the number of empty tiles after a move.
               As we urged for more speed, we also implemented multiproccessing into our AI that created a process for each top level move, in order to speed it up further.
               Thanks to the two mentioned measurements we achieved an average time per move of under one second.
@@ -146,7 +146,7 @@
             </p>
             <figure>
               <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_heuristic.jpg" alt="Bonus distribution second iteration">
-              <figcaption>Bonus Distribution Improved Heuristic</figcaption>
+              <figcaption>Bonus distribution Improved Heuristic</figcaption>
             </figure>
             <p>The results showed further improvement in the average score up to 44'000 points. The problem was that the algorithm still did not stack the tiles in a perfect descending order.
               Sometimes small numbers where caught in the bottom left corner which disturbed the system and lead to big problems after the 4096 tile has been reached. Therefor we came up with the Snakey variation of the heuristic
@@ -166,15 +166,15 @@
                   <div class="row">
                     <div class="col-md-4">
                       <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_snakey.jpg" alt="Bonus distribution Snakey">
-                        <figcaption>Bonus Distribution Snakey</figcaption>
+                        <figcaption>Bonus distribution Snakey</figcaption>
                     </div>
                     <div class="col-md-4">
                       <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_diagonaled.jpg" alt="Bonus distribution Snakey">
-                        <figcaption>Bonus Distribution Diagonal</figcaption>
+                        <figcaption>Bonus distribution Diagonal</figcaption>
                     </div>
                     <div class="col-md-4">
                       <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_squared.jpg" alt="Bonus distribution Snakey">
-                        <figcaption>Bonus Distribution Square</figcaption>
+                        <figcaption>Bonus distribution Square</figcaption>
                     </div>
                   </div>
                 </div>
