@@ -92,7 +92,7 @@
             }
         });
     }
-    
+
     // :: 5.0 Video Active Code
     if ($.fn.magnificPopup) {
         $('.video-btn').magnificPopup({
@@ -109,7 +109,7 @@
     if ($.fn.scrollUp) {
         browserWindow.scrollUp({
             scrollSpeed: 1500,
-            scrollText: '<i class="fa fa-angle-up"></i>'
+            scrollText: '<p class="fa fa-angle-up" style="color:white; font-style:bold; font-size:30px;">⮝</p>'
         });
     }
 
