@@ -100,9 +100,11 @@
             </p>
             <h4>Heuristic</h4>
             <p>Our first approach consisted of creating an algorithm which moved alternately down and right and as soon as he was stuck trying to find if the
-              bottom row or the lefthand row was full and move in that direction. The idea behind that was to keep the highest tile in the bottom right corner.
-              After a short time we realised that this strategy will not bear fruits as it's average score was around 3'500, so we discarded our algorithm and started over.<br>
-              This time we made an algorithm that will make two steps in the future in every possible direction (ignoring the random tile spawn) and assessed the board at that stage. We valued the board
+              bottom row or the lefthand row was full and move in that direction. The idea behind this "Pretty Good" algorithm was to keep the highest tile in the bottom right corner.
+              After a short time we realised that this strategy will not bear fruits as it's average score was around 4'000 points, so we discarded our algorithm and started over.<br>
+              This time we made the "Check Score" algorithm which did assess, which turn would lead to the greatest score, ignoring the random tile spawn. The scoring itself was a combination of different experiences that we obtained from the previous version.
+              On one hand it gave penalties to moves that would lead to badly shaped boards and on the otherhand it gave bonus for same neighbours.<br>
+              Built on the Check Score algorithm we build the "Hierarchical" algorithm which also did look two steps in the future in every possible direction (still ignoring the random tile spawn) and assessed the board at that stage. We valued the board
               by a score which was strongly depending on the position of the tiles. The better a tile was positioned, the higher the factor it's value was multiplied with.
               A good position was the closeness to the bottom right corner, and the tile in the corner itself got an additional bonus,
               to force the algorithm to keep the highest value there. The board score distribution for this version looked like this:</p>
@@ -111,9 +113,26 @@
                 <figcaption>Bonus Distribution Heuristic</figcaption>
               </figure>
               <p>These improvements got us way closer to our aim, overall the algorithm scored an average of 7'000 points.<br>
-              We further improved it by giving a neighbourbonus for tiles of the same value, and weighted empty tiles too, so the algorithm had more interest in merging tiles.
-              This small tweaks finally pushed our algorithm slightly over the 10'000 points threshold.
+              We further improved it by giving a neighbourbonus which we had in the Check Score algorithm, for tiles of the same value and weighted empty tiles too, so the algorithm had more interest in merging tiles.
+              This small tweaks finally pushed our algorithm slightly over the 10'000 points threshold.<br>
+              The following graphs show how the different heuristic algorithms did perform over 200 games and how they perform against the given a random agent.
             </p>
+            <figure>
+              <div class="single-slide">
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <img class="article-statistic" src="images/blogs/ai/scores_heuristicai.png" alt="scores heuristic ai">
+                      <figcaption>Distribution of the heuristics score over 200 games</figcaption>
+                    </div>
+                    <div class="col-md-6">
+                      <img class="article-statistic" src="images/blogs/ai/highest_tiles_reached_heuristicai.png" alt="highest reached tiles heuristic ai">
+                      <figcaption>Distribution of the highest reached tiles of the heuristics over 200 games</figcaption>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </figure>
             <h4>Expectimax</h4>
             <p>As 2048 contains a random factor in regard of the randomly spawned 2 or 4 value tile, Expectimax is the most obvious approach to implement an AI.
               We used the heuristics score function to value the board, as well as an adaptive depth going from depth one to depth three depending on the number of empty tiles.
@@ -137,7 +156,8 @@
               Furthermore this variant was alot faster than previous iterations as it only needs to make one
               matrix multiplication instead of two for loops and multiple if statements.<br>
               We tested out multiple other distributions, which we thought could work well with the same system as the Snakey.
-              One was a diagonal decreasing distribution of the bonuses, and one was squares, but in the end Snakey was the most succesful variation we created.
+              One was a diagonal decreasing distribution of the bonuses, another one was squares, and the last one was Snakey+ which also had a neighbourbonus implemented.
+              At the end Snakey still was the most succesful variation we created and if we wanted to improve it it just got worse.
               The score distribution for the different versions looked as follows:
             </p>
             <figure>
@@ -205,8 +225,8 @@
             </table>
 
             <p>The following two graphs show how the score and the tiles have been distributed over 20 games. As one can see, is the Snakey scoring function
-              mostly in the range of 60'000 to 80'000 points, which means that he often fails just before merging to the 8192. Whereas the Diagonal scoring function seems to have
-              less problems merging to the 8192 tile when he comes as far as the 4096 tile. This leads to the conclusion that in the Diagonal function the distribution of tiles
+              mostly in the range between 60'000 to 80'000 points, which means that he often fails just before merging to the 8192. Whereas the Diagonal scoring function seems to have
+              less problems merging to the 8192 tile when it even comes as far as the 4096 tile. This leads to the conclusion that in the Diagonal function the distribution of tiles
               seems to be better when the board is loaded with high tiles.
               A next step could be to combine the Snakey and Diagonal function, that the Snakey handles the part until the 4096 tile and then the Diagonal function takes over to reach an even higher score.
             <figure>

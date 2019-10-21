@@ -109,7 +109,7 @@
     if ($.fn.scrollUp) {
         browserWindow.scrollUp({
             scrollSpeed: 1500,
-            scrollText: '<p class="fa fa-angle-up" style="color:white; font-style:bold; font-size:30px;">⮝</p>'
+            scrollText: '<p class="fa fa-angle-up" style="color:white; font-style:bold; font-size:30px; text-align: center;">⮝</p>'
         });
     }
 
