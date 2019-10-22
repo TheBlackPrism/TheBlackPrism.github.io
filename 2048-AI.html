@@ -146,7 +146,7 @@
             <p>As 2048 contains a random factor in regard of the randomly spawned 2 or 4 value tile, Expectimax is the most obvious approach to implement an AI.
               We used the Hierarchicals heuristics score function (called Heuristic in the following) to value the board, as well as an adaptive depth going from depth one to depth three depending on the number of empty tiles.
               This allowed us to speed up the early phase of the game, as depth 3 with our score function needed up to 10 seconds for a move, depending on the number of empty tiles after a move.
-              As we urged for more speed, we also implemented multiproccessing into our AI that created a process for each top level move, in order to speed it up further.
+              As we urged for more speed, we also implemented multiprocessing into our AI that created a process for each top level move, in order to speed it up further.
               Thanks to the two mentioned measurements we achieved an average time per move of under one second.
               Overall the first iteration of our AI did alot better than the heuristic, it regularly won the game and the average score increased to 30'000 points.
               It was a good first step but we wanted to do better!<br>
@@ -261,12 +261,12 @@
                 </div>
               </div>
             </figure>
-            <p>As a last step we analysed the speed of our AI and how much multiproccessing speeded the calculation up for different depths.
+            <p>As a last step we analysed the speed of our AI and how much multiprocessing speeded the calculation up for different depths.
               We started always from the same board as seen on the graphic below and made three moves with every variation.
-              The variations reached from depth one to depth five and once with multiproccessing enabled and once without.
+              The variations reached from depth one to depth five and once with multiprocessing enabled and once without.
               We calculated the average time per move and compared them to each other.<br>
-              In conclusion we saw that multiproccessing is already a bit faster at depth one and nearly double as fast at depth two.
-              As expected the performance boost increased quickly and at depth five multiproccessing was already four times faster than singleproccessing.
+              In conclusion we saw that multiprocessing is already a bit faster at depth one and nearly double as fast at depth two.
+              As expected the performance boost increased quickly and at depth five multiprocessing was already four times faster than singleproccessing.
             </p>
             <figure>
               <div class="single-slide">
@@ -283,8 +283,8 @@
                       <table class="article-statistic">
                         <tr>
                           <th>Depth</th>
-                          <th>Singleprocess[s]</th>
-                          <th>Multiproccess[s]</th>
+                          <th>Singleprocess&nbsp;[s]</th>
+                          <th>Multiprocess&nbsp;[s]</th>
                         </tr>
                         <tr>
                           <td>1</td>
