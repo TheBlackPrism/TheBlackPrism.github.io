@@ -96,35 +96,66 @@
             <h4 class="subtitle">An approach to beat 2048 with AI</h4>
             <h5>By Jennifer Schürch & Yves Lütjens</h5>
             <p>The game 2048 is a hard game to beat. As there are many random variables during play, one has a hard time to implement a good algorithm for it.
-            We started off by implemented a heuristic algorithm and set the aim that it can reach 10'000 points in average.<br>
+                We started off by implemented a heuristic algorithm and set the aim that it can reach 10'000 points in average.<br>
             </p>
             <h4>Heuristic</h4>
             <p>Our first approach consisted of creating an algorithm which moved alternately down and right and as soon as he was stuck trying to find if the
-              bottom row or the lefthand row was full and move in that direction. The idea behind this "Pretty Good" algorithm was to keep the highest tile in the bottom right corner.
-              After a short time we realised that this strategy will not bear fruits as it's average score was around 4'000 points, so we discarded our algorithm and started over.<br>
-              This time we made the "Check Score" algorithm which chose the turn that would lead to the greatest score, ignoring the random tile spawn. The scoring itself was a combination of different experiences that we obtained from the previous version.
-              On one hand it gave penalties to moves that would lead to badly shaped boards and on the otherhand it gave bonus for same neighbours.<br>
-              Built on the Check Score algorithm we build the "Hierarchical" algorithm which also did look two steps in the future in every possible direction (still ignoring the random tile spawn) and assessed the board at that stage. We valued the board
-              by a score which was strongly depending on the position of the tiles. A better positioning of a tile lead to a higher factor. This factor will then be multiplied the value of the tile.
-              A good position was the closeness to the bottom right corner, and the tile in the corner itself got an additional bonus,
-              to force the algorithm to keep the highest value there. The board score distribution for this version looked like this:</p>
+                bottom row or the lefthand row was full and move in that direction. The idea behind this "Pretty Good" algorithm was to keep the highest tile in the bottom right corner.
+                After a short time we realised that this strategy will not bear fruits as it's average score was around 4'000 points, so we discarded our algorithm and started over.<br>
+                This time we made the "Check Score" algorithm which chose the turn that would lead to the greatest score, ignoring the random tile spawn. The scoring itself was a combination of different experiences that we obtained from the previous version.
+                On one hand it gave penalties to moves that would lead to badly shaped boards and on the otherhand it gave bonus for same neighbours.<br>
+                Built on the Check Score algorithm we build the "Hierarchical" algorithm which also did look two steps in the future in every possible direction (still ignoring the random tile spawn) and assessed the board at that stage. We valued the board
+                by a score which was strongly depending on the position of the tiles. A better positioning of a tile lead to a higher factor. This factor will then be multiplied the value of the tile.
+                A good position was the closeness to the bottom right corner, and the tile in the corner itself got an additional bonus,
+                to force the algorithm to keep the highest value there. The board score distribution for this version looked like this:</p>
             <figure>
                 <img class="article-image-rect" src="images/blogs/ai/board_bonus_heuristic.jpg" alt="Bonus distribution heuristic">
                 <figcaption>Bonus distribution Hierarchical</figcaption>
             </figure>
             <p>These improvements got us way closer to our aim, overall the algorithm scored an average of 7'000 points.<br>
-              We further improved it by giving a neighbourbonus which we had in the Check Score algorithm, for tiles of the same value and weighted empty tiles too, so the algorithm had more interest in merging tiles.
-              This small tweaks finally pushed our algorithm slightly over the 10'000 points threshold.<br>
-              The following graphs show how the different heuristic algorithms did perform over 200 games and how they perform against the given random agent.
+                We further improved it by giving a neighbourbonus which we had in the Check Score algorithm, for tiles of the same value and weighted empty tiles too, so the algorithm had more interest in merging tiles.
+                This small tweaks finally pushed our algorithm slightly over the 10'000 points threshold.<br>
+                The following graphs show how the different heuristic algorithms did perform over 200 games and how they perform against the given random agent.
             </p>
             <table>
-              <caption>Comparison of the implemented heuristics</caption>
-              <tbody><tr><th>Algorithm Name</th><th>Highscore</th><th>Average Score</th><th>Highest Tile</th><th>Time Per Move [s]</th></tr>
-              <tr><td>Random Agent</td><td>2'960</td><td>1'052</td><td>256</td><td>0.010664</td></tr>
-              <tr><td>Pretty Good</td><td>8'012</td><td>4'121</td><td>512</td><td>0.003739</td></tr>
-              <tr><td>Check Score</td><td>17'080</td><td>6'975</td><td>1024</td><td>0.009889</td></tr>
-              <tr><td>Hierarchical Rating</td><td>62'800</td><td>14'752</td><td>4096</td><td>0.008578</td></tr>
-              </tbody>
+                <caption>Comparison of the implemented heuristics</caption>
+                <tbody>
+                    <tr>
+                        <th>Algorithm Name</th>
+                        <th>Highscore</th>
+                        <th>Average Score</th>
+                        <th>Highest Tile</th>
+                        <th>Time Per Move [s]</th>
+                    </tr>
+                    <tr>
+                        <td>Random Agent</td>
+                        <td>2'960</td>
+                        <td>1'052</td>
+                        <td>256</td>
+                        <td>0.010664</td>
+                    </tr>
+                    <tr>
+                        <td>Pretty Good</td>
+                        <td>8'012</td>
+                        <td>4'121</td>
+                        <td>512</td>
+                        <td>0.003739</td>
+                    </tr>
+                    <tr>
+                        <td>Check Score</td>
+                        <td>17'080</td>
+                        <td>6'975</td>
+                        <td>1024</td>
+                        <td>0.009889</td>
+                    </tr>
+                    <tr>
+                        <td>Hierarchical Rating</td>
+                        <td>62'800</td>
+                        <td>14'752</td>
+                        <td>4096</td>
+                        <td>0.008578</td>
+                    </tr>
+                </tbody>
             </table>
             <figure>
                 <div class="single-slide">
@@ -144,30 +175,30 @@
             </figure>
             <h4>Expectimax</h4>
             <p>As 2048 contains a random factor in regard of the randomly spawned 2 or 4 value tile, Expectimax is the most obvious approach to implement an AI.
-              We used the Hierarchicals heuristics score function (called Heuristic in the following) to value the board, as well as an adaptive depth going from depth one to depth three depending on the number of empty tiles.
-              This allowed us to speed up the early phase of the game, as depth 3 with our score function needed up to 20 seconds for a move, depending on the number of empty tiles after a move.
-              As we urged for more speed, we also implemented multiprocessing into our AI that created a process for each top level move, in order to speed it up further.
-              Thanks to the two mentioned measurements we achieved an average time per move of under one second.
-              Overall the first iteration of our AI did alot better than the heuristic, it regularly won the game and the average score increased to 30'000 points.
-              It was a good first step but we wanted to do better!<br>
-              The next thing we tried was implementing a bonus if the neighbour was half as big, so that the AI can merge more smoothly. In contrary to what we expected,
-              this measurement destroyed the algorithm and scored lower than the heuristic. We came up with the idea to distribute the factors like a snake and give the corner a hefty bonus, according to the following image:
+                We used the Hierarchicals heuristics score function (called Heuristic in the following) to value the board, as well as an adaptive depth going from depth one to depth three depending on the number of empty tiles.
+                This allowed us to speed up the early phase of the game, as depth 3 with our score function needed up to 20 seconds for a move, depending on the number of empty tiles after a move.
+                As we urged for more speed, we also implemented multiprocessing into our AI that created a process for each top level move, in order to speed it up further.
+                Thanks to the two mentioned measurements we achieved an average time per move of under one second.
+                Overall the first iteration of our AI did alot better than the heuristic, it regularly won the game and the average score increased to 30'000 points.
+                It was a good first step but we wanted to do better!<br>
+                The next thing we tried was implementing a bonus if the neighbour was half as big, so that the AI can merge more smoothly. In contrary to what we expected,
+                this measurement destroyed the algorithm and scored lower than the heuristic. We came up with the idea to distribute the factors like a snake and give the corner a hefty bonus, according to the following image:
             </p>
             <figure>
                 <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_heuristic.jpg" alt="Bonus distribution second iteration">
                 <figcaption>Bonus distribution Improved Heuristic</figcaption>
             </figure>
             <p>The results showed further improvement in the average score up to 44'000 points. The problem was that the algorithm still did not stack the tiles in a perfect descending order.
-              Sometimes small numbers where caught in the bottom left corner which disturbed the system and lead to big problems after the 4096 tile has been reached. Therefore we came up with the Snakey variation of the heuristic
-              score system. In the Snakey variation we generated an array of big numbers with great distances between each other and in a descending order that would force the AI to fill up all the ranks in the bottom rows.
-              This approach finally was the breakthrough we where looking for!<br>
-              With an average score of 90'000 points it exceeded all previous implementations we made by far.
-              Furthermore this variant was alot faster than previous iterations as it only needs to make one
-              matrix multiplication instead of two for loops and multiple if statements.<br>
-              We tested out multiple other distributions, which we thought could work well with the same system as the Snakey.
-              One was a diagonal decreasing distribution of the bonuses, another one was squares, and the last one was Snakey+ which also had a neighbourbonus implemented.
-              At the end Snakey still was the most succesfull variation we created and if we wanted to improve it it just got worse.
-              The score distribution for the different versions looked as follows:
+                Sometimes small numbers where caught in the bottom left corner which disturbed the system and lead to big problems after the 4096 tile has been reached. Therefore we came up with the Snakey variation of the heuristic
+                score system. In the Snakey variation we generated an array of big numbers with great distances between each other and in a descending order that would force the AI to fill up all the ranks in the bottom rows.
+                This approach finally was the breakthrough we where looking for!<br>
+                With an average score of 90'000 points it exceeded all previous implementations we made by far.
+                Furthermore this variant was alot faster than previous iterations as it only needs to make one
+                matrix multiplication instead of two for loops and multiple if statements.<br>
+                We tested out multiple other distributions, which we thought could work well with the same system as the Snakey.
+                One was a diagonal decreasing distribution of the bonuses, another one was squares, and the last one was Snakey+ which also had a neighbourbonus implemented.
+                At the end Snakey still was the most succesfull variation we created and if we wanted to improve it it just got worse.
+                The score distribution for the different versions looked as follows:
             </p>
             <figure>
                 <div class="single-slide">
