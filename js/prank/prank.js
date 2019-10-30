@@ -531,22 +531,6 @@ function onCloseWindow (win) {
   if (i >= 0) wins.splice(i, 1)
 }
 
-/**
- * Show the unsuspecting user a friendly hello message with a cat.
- */
-function showHelloMessage () {
-  const template = document.querySelector('template')
-  const clone = document.importNode(template.content, true)
-  document.body.appendChild(clone)
-}
-
-/**
- * Remove the hello message.
- */
-function removeHelloMessage () {
-  const helloMessage = document.querySelector('.hello-message')
-  helloMessage.remove()
-}
 
 /**
  * Copy cat pictures onto the user's clipboard. Requires user-initiated event.
