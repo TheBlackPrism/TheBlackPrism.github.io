@@ -1,19 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Trending
-Explore
-
-@TheBlackPrism
-378feross/TheAnnoyingSite.com
- Code Issues 2 Pull requests 1 Actions Releases
-TheAnnoyingSite.com/static/index.js
-@feross feross changes
-6d7da62 on Aug 21, 2018
-789 lines (691 sloc)  22.2 KB
-
 /* global Element */
 
 /**
