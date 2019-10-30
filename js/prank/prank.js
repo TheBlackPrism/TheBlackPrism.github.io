@@ -247,7 +247,6 @@ function initChildWindow () {
  * Initialization code for parent windows.
  */
 function initParentWindow () {
-  showHelloMessage()
   blockBackButton()
   fillHistory()
   startInvisiblePictureInPictureVideo()
@@ -260,7 +259,6 @@ function initParentWindow () {
       startVideo()
       startAlertInterval()
       superLogout()
-      removeHelloMessage()
     }
   })
 }
