@@ -80,11 +80,15 @@ a:focus {
   transition-duration: 500ms;
   text-decoration: none;
   outline: 0 solid transparent;
-  color: #000000;
+  color: #5a5a5a;
   font-weight: 600;
   font-size: 16px;
   font-family: "Nunito" }
 
+  a:hover,
+  a:focus  {
+    color:#c90000;
+  }
 ul,
 ol {
   margin: 0; }

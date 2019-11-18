@@ -97,37 +97,41 @@
             <!--<h4 class="subtitle">An approach to beat 2048 with AI</h4>-->
             <h5>By Jennifer Schürch & Yves Lütjens</h5>
             <h3>Sudoku</h3>
-            <p>Writing a programm to solve any possible Sudoku riddle can rather easely be done using the <a href="https://en.wikipedia.org/wiki/Constraint_satisfaction_problem">Constraint Satisfaction Problem</a>.
-              By adding only a few constraints one can solve a Sudoku in no time. We created two different approaches and let them run against each other.</p>
+            <p>Writing a program to solve any possible Sudoku riddle can rather easily be done using the <a class="" href="https://en.wikipedia.org/wiki/Constraint_satisfaction_problem">Constraint Satisfaction Problem</a>.
+              By adding only a few constraints one can solve even the <a class="" href="https://conceptispuzzles.com/index.aspx?uri=info/article/424">hardest Sudoku</a> in no time. We created two different approaches and let them run against each other.
+            </p>
 
             <h4>Domain Adaption</h4>
             <p>In this approach we focused on the adaption of the domain, which means that we only added the all different constraints that each number can
-              only occure once. To insert the existing variables we restricted the domain of the field to the given number.
+              only occur once. To insert the existing variables, we restricted the domain of the field to the given number.
             </p>
 
             <h4>Constraint Addition</h4>
-            <p>In contrary to the solution that has been discussed before, in this approach we add another constraint instead of reducing the domain for existing nubmers.
-            this constraint consits of a lambda function which is added to each predefined variable and limits it's assignment to the given number.</p>
+            <p>In contrary to the solution that has been discussed before, in this approach we add another constraint instead of reducing the domain for existing numbers.
+            this constraint consists of a lambda function which is added to each predefined variable and limits its assignment to the given number.</p>
             <h4>Comparison</h4>
             <table>
-                <caption>Average Time over 10'000 iterations</caption>
+                <caption>Average Time over 10'000 iterations for standard and 100 iterations for hardest</caption>
                 <tbody>
                     <tr>
                         <th>Approach</th>
-                        <th>Average Time per Game [s]</th>
+                        <th>Average Time per Standard game [s]</th>
+                        <th>Average Time per Hardest game [s]</th>
                     </tr>
                     <tr>
                         <td>Domain Adaption</td>
                         <td>0.01889</td>
+                        <td>1.48596</td>
                     </tr>
                     <tr>
                         <td>Constraint Addition</td>
                         <td>0.01762</td>
+                        <td>1.19333</td>
                     </tr>
                 </tbody>
             </table>
             <p>The table above indicates, that the approach with the Domain Adaption is a bit slower than the Constraint Addition.
-              Even if the difference is in the range of 0.001 seconds it is clear that even such a small change can influence the performance significantly.
+              Even if the difference is in the range of 0.001 seconds it is clear that such a small change can influence the performance significantly.
             </p>
             <br>
 
@@ -142,7 +146,8 @@
                 <img class="article-image-dragnet" src="images/blogs/dragnet/links.jpg" alt="Code for who knows who">
                 <figcaption>Codesnippet who knows who</figcaption>
             </figure>
-            <p>This part describes that if X knows Y, Y also knows X meaning knowing is bi-directional and connection existst if a there is a path of people knowing the next link.
+            <p>This first part simply describes that if X knows Y, Y also knows X meaning knowing someone is bi-directional.
+              A connection exists on the other hand exists, if a there is a path of people knowing the next link until the target Y is reached.
             </p>
 
             <figure>
@@ -152,7 +157,7 @@
                 <figcaption>Codesnippet paths</figcaption>
             </figure>
             <p>The term get_all_paths uses recursion to find the path from X to Y.
-              It checks that X is not equals Y and checks that Y is not already in the list, as without these it would create infinit loops.
+              It checks that X is not equals Y and checks that Y is not already in the list, as without these it would create infinite loops.
               In get short paths, one can search for paths that are limited in the number of links, by defining constraints for L.
               For example get_short_paths("Berta", Y, P, L) & (L < 5) would return all paths from Berta to persons that are within a range of 5 links.
             </p>
@@ -165,17 +170,19 @@
             </figure>
             <p>Dated links are working quite similar to the has_link therm. The difference here is, that an additional rule is introduced.
               For a dated link to exist the contact from X to Y need to be in a descending date. If X had contact with Z <b>after</b> Z had contact with Y, Y cannot know the information X had.
-              This model is a bit simplyfied as we're only checking the date and not the time, but the concept stays the same.
+              This model is a bit simplified as we're only checking the date and not the time, but the concept stays the same.
             </p>
 
             <figure>
               <br>
                 <div style="background-color: #1E1E1E">
-                <img class="article-image-dragnet" src="images/blogs/dragnet/dated-links.jpg" alt="Code for dated paths">
+                <img class="article-image-dragnet" src="images/blogs/dragnet/dated-paths.jpg" alt="Code for dated paths">
                 </div>
                 <figcaption>Codesnippet for dated paths</figcaption>
             </figure>
-            <p>
+            <p>For the dated paths we implement a restriction that de date itself is within the range we are interested into.
+              This can be achieved by connecting the get_all_paths terms with the constraints for (D >= date_board_decision) & (D <= date_shares_bought).
+              Furthermore this therm contains a variable A which stores the path of dates.
             </p>
             <!--
 
