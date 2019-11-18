@@ -102,6 +102,12 @@
             </p>
 
             <h4>Domain Adaption</h4>
+            <figure>
+                <div style="background-color: #1E1E1E">
+                  <img class="article-image-dragnet" src="images/blogs/dragnet/sudoku-domain.jpg" alt="Code for Sudoku Domain">
+                </div>
+                <figcaption>Codesnippet for Sudoku with Domain Adaption</figcaption>
+            </figure>
             <p>In this approach we focused on the adaption of the domain, which means that we only added the all different constraints that each number can
               only occur once. To insert the existing variables, we restricted the domain of the field to the given number.
             </p>
@@ -136,9 +142,9 @@
             <br>
 
             <h3>Dragnet</h3>
-            <p>There have been charges of insider trading against Katarina Quandt. 
-                The BigCompany AG held a board meeting on 12.2.2017 where they decided to launch a large share-buyback program in February of 2017. 
-                Shortly after this decision on 23.2.2017 Katarina Quandt bought vast amounts of shared of the BigCompany AG which lead us to believe that she had insider information about the program. 
+            <p>There have been charges of insider trading against Katarina Quandt.
+                The BigCompany AG held a board meeting on 12.2.2017 where they decided to launch a large share-buyback program in February of 2017.
+                Shortly after this decision on 23.2.2017 Katarina Quandt bought vast amounts of shared of the BigCompany AG which lead us to believe that she had insider information about the program.
                 To help solve the crime investigations are started using a dragnet, to see which company board member could have leaked the information.</p>
             <h4>Implementation</h4>
             <p>To create a dragnet using Datalog is a challenge! We have taken it up and created a dragnet to analyse calls and texts between persons of a company.
@@ -188,6 +194,54 @@
               This can be achieved by connecting the get_all_paths terms with the constraints for (D >= date_board_decision) & (D <= date_shares_bought).
               Furthermore this therm contains a variable A which stores the path of dates.
             </p>
+
+            <h4>Results</h4>
+            <table>
+                <caption>Paths from board members to Quandt Katarina with Depth = 5</caption>
+                <tbody>
+                    <tr>
+                        <th>Board Member</th>
+                        <th>Path</th>
+                    </tr>
+                    <tr>
+                        <td>Eder Eva</td>
+                        <td>Egerer Leni -> Scheunemann Dario -> Quandt Katarina</td>
+                    </tr>
+                    <tr>
+                        <td>Eder Eva</td>
+                        <td>Egerer Leni -> Walz Grit -> Kretzer Julian -> Scheunemann Dario -> Quandt Katarina</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Jill</td>
+                        <td>Walz Grit -> Kretzer Julian -> Scheunemann Dario -> Quandt Katarina</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Jill</td>
+                        <td>Egerer Leni -> Walz Grit -> Kretzer Julian -> Scheunemann Dario -> Quandt Katarina</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table>
+                <caption>Paths from board members to Quandt Katarina with respect to dates</caption>
+                <tbody>
+                    <tr>
+                        <th>Board Member</th>
+                        <th>Path</th>
+                    </tr>
+                    <tr>
+                        <td>Eder Eva</td>
+                        <td>12.02.2017 -> Egerer Leni -> 13.02.2017 -> Scheunemann Dario -> 16.02.2017 -> Quandt Katarina</td>
+                    </tr>
+                    <tr>
+                        <td>Eder Eva</td>
+                        <td>12.02.2017 -> Egerer Leni -> 17.02.2017 -> Welling Isabelle  -> 20.02.2017 -> Lass Rudolf -> 21.02.2017 -> Quandt Katarina</td>
+                    </tr>
+                    <tr>
+                        <td>Eder Eva</td>
+                        <td>12.02.2017 -> Egerer Leni -> 13.02.2017 -> Scheunemann Dario -> 13.02.2017 -> Goerke Ella -> 14.02.2017 -> Klingler Karlotta -> 19.02.2017 -> Leibold Thorge -> 21.02.2017 -> Edel Margrit -> 23.02.2017 -> Quandt Katarina</td>
+                    </tr>
+                </tbody>
+            </table>
             <!--
 
             <figure>
