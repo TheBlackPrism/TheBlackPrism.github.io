@@ -78,7 +78,7 @@
             dots: false,
             autoplay: true,
             nav: true,
-            navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+            navText: ['<i class="fa fa-angle-left">⮜</i>', '<i class="fa fa-angle-right">⮞</i>'],
             responsive: {
                 0: {
                     items: 1
@@ -109,7 +109,7 @@
     if ($.fn.scrollUp) {
         browserWindow.scrollUp({
             scrollSpeed: 1500,
-            scrollText: '<p class="fa fa-angle-up" style="color:white; font-style:bold; font-size:30px; text-align: center;">⮝</p>'
+            scrollText: '<i class="fa fa-angle-up">⮝</i>'
         });
     }
 
