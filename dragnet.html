@@ -96,6 +96,7 @@
             <h2>Solving Sudoku with CSP and creating a dragnet with Datalog</h2>
             <!--<h4 class="subtitle">An approach to beat 2048 with AI</h4>-->
             <h5>By Jennifer Schürch & Yves Lütjens</h5>
+            <br>
             <h3>Sudoku</h3>
             <p>Writing a program to solve any possible Sudoku riddle can rather easily be done using the <a class="" href="https://en.wikipedia.org/wiki/Constraint_satisfaction_problem">Constraint Satisfaction Problem</a> (CSP).
               By adding only a few constraints one can solve even the <a class="" href="https://conceptispuzzles.com/index.aspx?uri=info/article/424">hardest Sudoku</a> in no time. We created two different approaches and let them run against each other.
@@ -177,7 +178,7 @@
             <h4>Implementation</h4>
             <p>To create a dragnet using Datalog is a challenge! We have taken it up and created a dragnet to analyse calls and texts between people of a company.
               In this part of the blog we will go into depth how our dragnet works and explain what purpose which code-element fulfils.
-              The terms ‘knows’, ‘called’ and ‘texted’ have already been with the information of the calls and texts issued by the suspects and their acquaintances in February 2017.
+              The terms 'knows', 'called' and 'texted' have already been with the information of the calls and texts issued by the suspects and their acquaintances in February 2017.
             </p>
 
             <h5>Knowing</h5>
@@ -192,7 +193,7 @@
             </figure>
 
             <h5>Paths</h5>
-            <p>The term get_all_paths uses recursion to find the path from X to Y.
+            <p>The term 'get_all_paths' uses recursion to find the path from X to Y.
               It checks that X is not equals Y and checks that Y is not already in the list, as without these it would create infinite loops.
               In get short paths, one can search for paths that are limited in the number of links, by defining constraints for L.
               For example get_short_paths("Berta", Y, P, L) & (L < 5) would return all paths from Berta to persons that are within a range of 5 links.
@@ -205,7 +206,7 @@
             </figure>
 
             <h5>Dated Links</h5>
-            <p>Dated links are working quite similar to the has_link therm. The difference here is, that an additional rule is introduced.
+            <p>Dated links are working quite similar to the 'has_link' therm. The difference here is, that an additional rule is introduced.
               For a dated link to exist the contact from X to Y need to be in a descending date. If X had contact with Z <b>after</b> Z had contact with Y, Y cannot know the information X had.
               This model is a bit simplified as we're only checking the date and not the time, but the concept stays the same.
             </p>
@@ -218,7 +219,7 @@
 
             <h5>Dated Paths</h5>
             <p>For the dated paths we implement a restriction that de date itself is within the range we are interested into.
-              This can be achieved by connecting the get_all_paths terms with the constraints for (D >= date_board_decision) & (D <= date_shares_bought).
+              This can be achieved by connecting the 'get_all_paths' terms with the constraints for (D >= date_board_decision) & (D <= date_shares_bought).
               Furthermore this therm contains a variable A which stores the path of dates.
             </p>
             <figure>
