@@ -958,6 +958,14 @@ img {
   .single-blog-post.style-6:hover .blog-content .post-title {
     color: #ef1b48; }
 
+  @media only screen and (min-width: 768px){
+
+    .single-blog-post.style-1.bottom{
+    position: absolute;
+    bottom: 0;
+  }
+}
+
 .sidebar-area {
   position: relative;
   z-index: 1; }
