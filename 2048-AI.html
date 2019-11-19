@@ -109,7 +109,8 @@
                 Built on the Check Score algorithm we build the "Hierarchical" algorithm which also did look two steps in the future in every possible direction (still ignoring the random tile spawn) and assessed the board at that stage. We valued the board
                 by a score which was strongly depending on the position of the tiles. A better positioning of a tile lead to a higher factor. This factor will then be multiplied the value of the tile.
                 A good position was the closeness to the bottom right corner, and the tile in the corner itself got an additional bonus,
-                to force the algorithm to keep the highest value there. The board score distribution for this version looked like this:</p>
+                to force the algorithm to keep the highest value there. The board score distribution for this version looked like this:
+            </p>
             <figure>
                 <img class="article-image-rect" src="images/blogs/ai/board_bonus_heuristic.jpg" alt="Bonus distribution heuristic">
                 <figcaption>Bonus distribution Hierarchical</figcaption>
@@ -227,151 +228,153 @@
 
             <h4>Conclusion</h4>
             <p>In the following table we listed the performance of each expectimax scoring function we developed, to compare them against each other.
-                <table>
-                    <caption>Comparison of the implemented expectimax scoring functions</caption>
-                    <tr>
-                        <th>Algorithm Name</th>
-                        <th>Highscore</th>
-                        <th>Average Score</th>
-                        <th>Highest Tile</th>
-                        <th>Time Per Move [s]</th>
-                    </tr>
-                    <tr>
-                        <td>Snakey</td>
-                        <td>167'888</td>
-                        <td>90'813</td>
-                        <td>8192</td>
-                        <td>0.58130573</td>
-                    </tr>
-                    <tr>
-                        <td>Snakey+</td>
-                        <td>113'180</td>
-                        <td>68'555</td>
-                        <td>8192</td>
-                        <td>1.30097970</td>
-                    </tr>
-                    <tr>
-                        <td>Diagonal</td>
-                        <td>132'996</td>
-                        <td>65'321</td>
-                        <td>8192</td>
-                        <td>0.54674995</td>
-                    </tr>
-                    <tr>
-                        <td>Heuristic</td>
-                        <td>112'776</td>
-                        <td>44'194</td>
-                        <td>8192</td>
-                        <td>0.15212381</td>
-                    </tr>
-                    <tr>
-                        <td>Square</td>
-                        <td>36'772</td>
-                        <td>19'658</td>
-                        <td>2048</td>
-                        <td>0.08806930</td>
-                    </tr>
-                </table>
+            </p>
+            <table>
+                <caption>Comparison of the implemented expectimax scoring functions</caption>
+                <tr>
+                    <th>Algorithm Name</th>
+                    <th>Highscore</th>
+                    <th>Average Score</th>
+                    <th>Highest Tile</th>
+                    <th>Time Per Move [s]</th>
+                </tr>
+                <tr>
+                    <td>Snakey</td>
+                    <td>167'888</td>
+                    <td>90'813</td>
+                    <td>8192</td>
+                    <td>0.58130573</td>
+                </tr>
+                <tr>
+                    <td>Snakey+</td>
+                    <td>113'180</td>
+                    <td>68'555</td>
+                    <td>8192</td>
+                    <td>1.30097970</td>
+                </tr>
+                <tr>
+                    <td>Diagonal</td>
+                    <td>132'996</td>
+                    <td>65'321</td>
+                    <td>8192</td>
+                    <td>0.54674995</td>
+                </tr>
+                <tr>
+                    <td>Heuristic</td>
+                    <td>112'776</td>
+                    <td>44'194</td>
+                    <td>8192</td>
+                    <td>0.15212381</td>
+                </tr>
+                <tr>
+                    <td>Square</td>
+                    <td>36'772</td>
+                    <td>19'658</td>
+                    <td>2048</td>
+                    <td>0.08806930</td>
+                </tr>
+            </table>
 
-                <p>The following two graphs show how the score and the tiles have been distributed over 20 games. As one can see, is the Snakey scoring function
-                    mostly in the range between 60'000 to 80'000 points, which means that he often fails just before merging to the 8192. Whereas the Diagonal scoring function seems to have
-                    less problems merging to the 8192 tile when it even comes as far as the 4096 tile. This leads to the conclusion that in the Diagonal function the distribution of tiles
-                    seems to be better when the board is loaded with high tiles.
-                    A next step could be to combine the Snakey and Diagonal function, that the Snakey handles the part until the 4096 tile and then the Diagonal function takes over to reach an even higher score.
-                    <figure>
-                        <div class="single-slide">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img class="article-statistic" src="images/blogs/ai/scores.png" alt="score distribution">
-                                        <figcaption>Distribution of the score over 20 games</figcaption>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img class="article-statistic" src="images/blogs/ai/highest_tiles_reached.png" alt="highest reached tiles">
-                                        <figcaption>Distribution of the highest reached tiles over 20 games</figcaption>
-                                    </div>
-                                </div>
+            <p>The following two graphs show how the score and the tiles have been distributed over 20 games. As one can see, is the Snakey scoring function
+                mostly in the range between 60'000 to 80'000 points, which means that he often fails just before merging to the 8192. Whereas the Diagonal scoring function seems to have
+                less problems merging to the 8192 tile when it even comes as far as the 4096 tile. This leads to the conclusion that in the Diagonal function the distribution of tiles
+                seems to be better when the board is loaded with high tiles.
+                A next step could be to combine the Snakey and Diagonal function, that the Snakey handles the part until the 4096 tile and then the Diagonal function takes over to reach an even higher score.
+            </p>
+            <figure>
+                <div class="single-slide">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img class="article-statistic" src="images/blogs/ai/scores.png" alt="score distribution">
+                                <figcaption>Distribution of the score over 20 games</figcaption>
+                            </div>
+                            <div class="col-md-6">
+                                <img class="article-statistic" src="images/blogs/ai/highest_tiles_reached.png" alt="highest reached tiles">
+                                <figcaption>Distribution of the highest reached tiles over 20 games</figcaption>
                             </div>
                         </div>
-                    </figure>
-                    <p>As a last step we analysed the speed of our AI and how much multiprocessing speeded the calculation up for different depths.
-                        We started always from the same board as seen on the graphic below and made three moves with every variation.
-                        The variations reached from depth one to depth five and once with multiprocessing enabled and once without.
-                        We calculated the average time per move and compared them to each other.<br>
-                        In conclusion we saw that multiprocessing is already a bit faster at depth one and nearly double as fast at depth two.
-                        As expected the performance boost increased quickly and at depth five multiprocessing was already four times faster than singleproccessing.
-                    </p>
-                    <figure>
-                        <div class="single-slide">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-4">
-                                        <img class="article-statistic" src="images/blogs/ai/time_measure_starting_point.png" alt="starting point time measurement">
-                                        <figcaption>Startingboard of the time measurement</figcaption>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <img class="article-statistic" src="images/blogs/ai/time_per_move_per_depths.png" alt="average time per move per depths">
-                                    </div>
-                                    <div class="col-md-4">
-                                        <table class="article-statistic">
-                                            <tr>
-                                                <th>Depth</th>
-                                                <th>Singleprocess&nbsp;[s]</th>
-                                                <th>Multiprocess&nbsp;[s]</th>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>0.010971</td>
-                                                <td>0.008644</td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>0.067817</td>
-                                                <td>0.040891</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>2.558497</td>
-                                                <td>0.620329</td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>48.070847</td>
-                                                <td>24.369725</td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>1641.396178</td>
-                                                <td>416.629117</td>
-                                            </tr>
-                                        </table>
-                                        <figcaption>Average times per move per depths</figcaption>
-                                    </div>
-                                </div>
+                    </div>
+                </div>
+            </figure>
+            <p>As a last step we analysed the speed of our AI and how much multiprocessing speeded the calculation up for different depths.
+                We started always from the same board as seen on the graphic below and made three moves with every variation.
+                The variations reached from depth one to depth five and once with multiprocessing enabled and once without.
+                We calculated the average time per move and compared them to each other.</br>
+                In conclusion we saw that multiprocessing is already a bit faster at depth one and nearly double as fast at depth two.
+                As expected the performance boost increased quickly and at depth five multiprocessing was already four times faster than singleproccessing.
+            </p>
+            <figure>
+                <div class="single-slide">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <img class="article-statistic" src="images/blogs/ai/time_measure_starting_point.png" alt="starting point time measurement">
+                                <figcaption>Startingboard of the time measurement</figcaption>
+                            </div>
+                            <div class="col-md-4">
+                                <img class="article-statistic" src="images/blogs/ai/time_per_move_per_depths.png" alt="average time per move per depths">
+                            </div>
+                            <div class="col-md-4">
+                                <table class="article-statistic">
+                                    <tr>
+                                        <th>Depth</th>
+                                        <th>Singleprocess&nbsp;[s]</th>
+                                        <th>Multiprocess&nbsp;[s]</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>0.010971</td>
+                                        <td>0.008644</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>0.067817</td>
+                                        <td>0.040891</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>2.558497</td>
+                                        <td>0.620329</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>48.070847</td>
+                                        <td>24.369725</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>1641.396178</td>
+                                        <td>416.629117</td>
+                                    </tr>
+                                </table>
+                                <figcaption>Average times per move per depths</figcaption>
                             </div>
                         </div>
-                    </figure>
+                    </div>
+                </div>
+            </figure>
 
-                    <div id="disqus_thread"></div>
-                    <script>
-                        /**
-                         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-                        /**
-                        var disqus_config = function () {
-                        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-                        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                        };
-                        **/
-                        (function() { // DON'T EDIT BELOW THIS LINE
-                            var d = document,
-                                s = d.createElement('script');
-                            s.src = 'https://blackprism.disqus.com/embed.js';
-                            s.setAttribute('data-timestamp', +new Date());
-                            (d.head || d.body).appendChild(s);
-                        })();
-                    </script>
-                    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /**
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                **/
+                (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document,
+                        s = d.createElement('script');
+                    s.src = 'https://blackprism.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 
         </div>
     </div>
