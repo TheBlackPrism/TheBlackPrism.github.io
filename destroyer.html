@@ -107,9 +107,18 @@
             dae.rotation.y = 2;
             dae.scale.set(0.3, 0.3, 0.3);
             scene.add(dae);
+
+            var spotLightGround = new THREE.SpotLight(0xE8D6C1, 0.70);
+            spotLightGround.angle = Math.PI/2;
+            spotLightGround.position.set(0, 0.1, 0);
+            spotLightGround.target = dae;
+            spotLightGround.castShadow = true;
+            scene.add(spotLightGround);
+            
             ship.castShadow = true;
             //console.log(dae); // for scene analysis
-            // Set trancpareny of window material (is shared with all glasses of car)
+
+
             render();
             colorChanged();
         });
