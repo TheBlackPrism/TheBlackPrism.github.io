@@ -360,7 +360,17 @@ img {
     content: ""; }
 
 .bg-fixed {
-  background-attachment: fixed !important; }
+  background-attachment: fixed !important;
+}
+
+.preview-container span, .preview-container h3 {
+  transition: 1000ms;
+}
+
+.preview-container:hover span, .preview-container:hover h3 {
+  transition: 1000ms;
+  color: #c90000;
+}
 
 /* :: 3.6.0 ScrollUp */
 #scrollUp {
