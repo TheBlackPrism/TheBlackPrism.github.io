@@ -593,6 +593,35 @@ img {
   z-index: 1;
   padding: 0 5px; }
 
+.banding {
+  content: '';
+  background-color: #d6dfe2;
+  height: 2px;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: -1px;
+  margin-bottom: 10px;
+  z-index: -1; }
+
+.blogpreview{
+  cursor: pointer;
+  transition-duration: 1000ms;
+  border-top-style: solid;
+  border-bottom-style: solid;
+  padding:10px;
+}
+
+.blogpreview:hover {
+  color: #c90000;
+  transition-duration: 1000ms;
+  background: rgba(0,0,0,0.1);
+}
+
+.blogpreview p {
+  margin: 0px;
+}
+
 /* :: 7.0 Footer Area CSS */
 .footer-area {
   position: relative;
