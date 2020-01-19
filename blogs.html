@@ -5,11 +5,14 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154262640-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'UA-154262640-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-154262640-1');
     </script>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -102,39 +105,43 @@
     <!-- ##### Header Area End ##### -->
 
     <section class="hero-area">
-      <div class="pt-4 mb-5 text-center">
-          <div class="col-12">
-              <h2 class="mb-4">All Blogs &mdash; 2 Blogposts</h2>
-          </div>
-      </div>
-
-      <!-- ##### Hero Area Start ##### -->
-      <div class="section-padding-200">
-          <div class="container">
-            <div class="blogpreview" onclick="window.location='2048-AI.html';">
-              <h2>Artificial Intelligence for 2048</h2>
-              <h4 class="subtitle">An approach to beat 2048 with AI</h4>
-              <h5>By Jennifer Schürch & Yves Lütjens</h5>
-              <p>The game 2048 is a hard game to beat. As there are many random variables during play, one has a hard time to implement a good algorithm for it.
-                  We started off by implemented a heuristic algorithm and set the aim that it can reach 10'000 points in average.<br>
-              </p>
+        <div class="pt-4 mb-5 text-center">
+            <div class="col-12">
+                <h2 class="mb-4">All Blogs &mdash; 2 Blogposts</h2>
             </div>
-          </div>
-      </div>
+        </div>
 
-      <div class="section-padding-200">
-          <div class="container">
-            <div class="blogpreview" onclick="window.location='dragnet.html';">
-              <h2>Solving Sudoku with CSP and creating a dragnet with Datalog</h2>
-              <h5>By Jennifer Schürch & Yves Lütjens</h5>
-              <p>Writing a program to solve any possible Sudoku riddle can rather easily be done using the Constraint Satisfaction Problem (CSP).
-                  By adding only a few constraints one can solve even the hardest Sudoku in no time. We created two different approaches and let them run against each other.
-              </p>
+        <!-- ##### Hero Area Start ##### -->
+        <div class="container blogpost">
+            <div class="section-padding-200">
+                <div class="container">
+                    <div class="blogpreview" onclick="window.location='2048-AI.html';">
+                        <h2>Artificial Intelligence for 2048</h2>
+                        <h4 class="subtitle">An approach to beat 2048 with AI</h4>
+                        <h5>By Jennifer Schürch & Yves Lütjens</h5>
+                        <p>The game 2048 is a hard game to beat. As there are many random variables during play, one has a hard time to implement a good algorithm for it.
+                            We started off by implemented a heuristic algorithm and set the aim that it can reach 10'000 points in average.<br>
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
-      </div>
+
+            <div class="section-padding-200">
+                <div class="container">
+                    <div class="blogpreview" onclick="window.location='dragnet.html';">
+                        <h2>Solving Sudoku with CSP and creating a dragnet with Datalog</h2>
+                        <h5>By Jennifer Schürch & Yves Lütjens</h5>
+                        <p>Writing a program to solve any possible Sudoku riddle can rather easily be done using the Constraint Satisfaction Problem (CSP).
+                            By adding only a few constraints one can solve even the hardest Sudoku in no time. We created two different approaches and let them run against each other.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
+
     <div class="mb-50"></div>
+
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <!-- Footer Logo -->
@@ -142,7 +149,6 @@
             <a href="index.html">The Black Prism</a>
         </div>
     </footer>
-    <!-- ##### Footer Area Start ##### -->
 
     <div id="particles-js"></div>
     <!-- ##### All Javascript Script ##### -->

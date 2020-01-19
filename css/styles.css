@@ -858,6 +858,10 @@ img {
     margin: 0px;
 }
 
+.blogpost {
+    background: rgba(256, 256, 256, 0.8);
+}
+
 /* :: 7.0 Footer Area CSS */
 .footer-area {
     position: relative;
