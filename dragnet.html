@@ -5,11 +5,14 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154262640-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'UA-154262640-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-154262640-1');
     </script>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -32,7 +35,7 @@
 
     <meta property="og:title" content="The Black Prism" />
     <meta property="og:url" content="https://blackprism.tk" />
-    <meta property="og:image" content="https://blackprism.tk/images/Black-Prism_Logo_V05_Black.png"/>
+    <meta property="og:image" content="https://blackprism.tk/images/Black-Prism_Logo_V05_Black.png" />
 </head>
 
 <body>
@@ -105,196 +108,197 @@
     <!-- ##### Header Area End ##### -->
 
     <!-- ##### Hero Area Start ##### -->
-    <div class="section-padding-200">
-        <div class="container blogpost">
+    <section class="section-padding-200">
+        <div class="container">
             <h2>Solving Sudoku with CSP and creating a dragnet with Datalog</h2>
             <!--<h4 class="subtitle">An approach to beat 2048 with AI</h4>-->
-            <h5>By Jennifer Schürch & Yves Lütjens</h5>
-            <br>
-            <h3>Sudoku</h3>
-            <p>Writing a program to solve any possible Sudoku riddle can rather easily be done using the <a class="" href="https://en.wikipedia.org/wiki/Constraint_satisfaction_problem">Constraint Satisfaction Problem</a> (CSP).
-                By adding only a few constraints one can solve even the <a class="" href="https://conceptispuzzles.com/index.aspx?uri=info/article/424">hardest Sudoku</a> in no time. We created two different approaches and let them run against each other.
-            </p>
+            <h5 class="author">By Jennifer Schürch & Yves Lütjens</h5>
+            <div class="blogpost">
+                <h3>Sudoku</h3>
+                <p>Writing a program to solve any possible Sudoku riddle can rather easily be done using the <a class="" href="https://en.wikipedia.org/wiki/Constraint_satisfaction_problem">Constraint Satisfaction Problem</a> (CSP).
+                    By adding only a few constraints one can solve even the <a class="" href="https://conceptispuzzles.com/index.aspx?uri=info/article/424">hardest Sudoku</a> in no time. We created two different approaches and let them run against each other.
+                </p>
 
-            <h4>Domain Adaption</h4>
-            <p>In this approach we focused on the adaption of the domain, which means that we only added the all different constraints that each number can
-                only occur once. To insert the existing variables, we restricted the domain of the field to the given number.
-            </p>
-            <figure>
-                <div style="background-color: #1E1E1E">
-                    <img class="article-image-dragnet" style="height: 230px;" src="images/blogs/dragnet/sudoku-domain.jpg" alt="Code for Sudoku Domain">
-                </div>
-                <figcaption>Codesnippet for Sudoku with Domain Adaption</figcaption>
-            </figure>
+                <h4>Domain Adaption</h4>
+                <p>In this approach we focused on the adaption of the domain, which means that we only added the all different constraints that each number can
+                    only occur once. To insert the existing variables, we restricted the domain of the field to the given number.
+                </p>
+                <figure>
+                    <div style="background-color: #1E1E1E">
+                        <img class="article-image-dragnet" style="height: 230px;" src="images/blogs/dragnet/sudoku-domain.jpg" alt="Code for Sudoku Domain">
+                    </div>
+                    <figcaption>Codesnippet for Sudoku with Domain Adaption</figcaption>
+                </figure>
 
-            <h4>Constraint Addition</h4>
-            <p>In contrary to the solution that has been discussed before, in this approach we add another constraint instead of reducing the domain for existing numbers.
-                this constraint consists of a lambda function which is added to each predefined variable and limits its assignment to the given number.
-            </p>
-            <figure>
-                <div style="background-color: #1E1E1E">
-                    <img class="article-image-dragnet" style="height: 230px;" src="images/blogs/dragnet/sudoku-constraints.jpg" alt="Code for Sudoku Constraints">
-                </div>
-                <figcaption>Codesnippet for Sudoku with Constraints Addition</figcaption>
-            </figure>
+                <h4>Constraint Addition</h4>
+                <p>In contrary to the solution that has been discussed before, in this approach we add another constraint instead of reducing the domain for existing numbers.
+                    this constraint consists of a lambda function which is added to each predefined variable and limits its assignment to the given number.
+                </p>
+                <figure>
+                    <div style="background-color: #1E1E1E">
+                        <img class="article-image-dragnet" style="height: 230px;" src="images/blogs/dragnet/sudoku-constraints.jpg" alt="Code for Sudoku Constraints">
+                    </div>
+                    <figcaption>Codesnippet for Sudoku with Constraints Addition</figcaption>
+                </figure>
 
-            <h4>Comparison</h4>
-            <table>
-                <caption>Average Time over 10'000 iterations for standard and 100 iterations for hardest</caption>
-                <tbody>
-                    <tr>
-                        <th>Approach</th>
-                        <th>Average Time per Standard game [s]</th>
-                        <th>Average Time per Hardest game [s]</th>
-                    </tr>
-                    <tr>
-                        <td>Domain Adaption</td>
-                        <td>0.01889</td>
-                        <td>1.48596</td>
-                    </tr>
-                    <tr>
-                        <td>Constraint Addition</td>
-                        <td>0.01762</td>
-                        <td>1.19333</td>
-                    </tr>
-                </tbody>
-            </table>
-            <p>The table above indicates, that the approach with the Domain Adaption is a bit slower than the Constraint Addition.
-                Interestingly we can see that when adding the constraint for existing variables, the domain for these is restricted after solving the riddle.
-                Seeing that one would expect that the Domain Adaption is faster than Constraint Addition, but that's not the case.
-                Even if the difference is in the range of 0.001 seconds it is clear that such a small change can influence the performance significantly.
-                For more difficult sudoku puzzles the difference will be larger as it can be seen in the case of the hardest sudoku game.
-            </p>
+                <h4>Comparison</h4>
+                <table>
+                    <caption>Average Time over 10'000 iterations for standard and 100 iterations for hardest</caption>
+                    <tbody>
+                        <tr>
+                            <th>Approach</th>
+                            <th>Average Time per Standard game [s]</th>
+                            <th>Average Time per Hardest game [s]</th>
+                        </tr>
+                        <tr>
+                            <td>Domain Adaption</td>
+                            <td>0.01889</td>
+                            <td>1.48596</td>
+                        </tr>
+                        <tr>
+                            <td>Constraint Addition</td>
+                            <td>0.01762</td>
+                            <td>1.19333</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>The table above indicates, that the approach with the Domain Adaption is a bit slower than the Constraint Addition.
+                    Interestingly we can see that when adding the constraint for existing variables, the domain for these is restricted after solving the riddle.
+                    Seeing that one would expect that the Domain Adaption is faster than Constraint Addition, but that's not the case.
+                    Even if the difference is in the range of 0.001 seconds it is clear that such a small change can influence the performance significantly.
+                    For more difficult sudoku puzzles the difference will be larger as it can be seen in the case of the hardest sudoku game.
+                </p>
 
-            <h4>The Hardest Sudoku</h4>
-            <p>In 2012, Finnish mathematician Arto Inkala claimed to have created the "World's Hardest Sudoku".</p>
-            <figure>
-                <div class="single-slide">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <img class="article-image-rect" src="images/blogs/dragnet/hardest_sudoku_before.png" alt="Hardest Sudoku Starting Position">
-                                <figcaption>Hardest Sudoku Starting Position</figcaption>
-                            </div>
-                            <div class="col-md-6">
-                                <img class="article-image-rect" src="images/blogs/dragnet/hardest_sudoku_solved.png" alt="Hardest Sudoku Solution">
-                                <figcaption>Hardest Sudoku Solution solved with CSP</figcaption>
+                <h4>The Hardest Sudoku</h4>
+                <p>In 2012, Finnish mathematician Arto Inkala claimed to have created the "World's Hardest Sudoku".</p>
+                <figure>
+                    <div class="single-slide">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="article-image-rect" src="images/blogs/dragnet/hardest_sudoku_before.png" alt="Hardest Sudoku Starting Position">
+                                    <figcaption>Hardest Sudoku Starting Position</figcaption>
+                                </div>
+                                <div class="col-md-6">
+                                    <img class="article-image-rect" src="images/blogs/dragnet/hardest_sudoku_solved.png" alt="Hardest Sudoku Solution">
+                                    <figcaption>Hardest Sudoku Solution solved with CSP</figcaption>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </figure>
-            <br>
+                </figure>
+                <br>
 
-            <h3>Dragnet</h3>
-            <p>There have been charges of insider trading against Katarina Quandt.
-                The BigCompany AG held a board meeting on 12.02.2017 where they decided to launch a large share-buyback program in February of 2017.
-                Shortly after this decision on 23.02.2017 Katarina Quandt bought vast amounts of shares from the BigCompany AG which lead us to believe that she had insider information about the program.
-                To help solve the crime investigations are started using a dragnet, to see which company board member could have leaked the information.
-            </p>
-            <h4>Implementation</h4>
-            <p>To create a dragnet using Datalog is a challenge! We have taken it up and created a dragnet to analyse calls and texts between people of a company.
-                In this part of the blog we will go into depth how our dragnet works and explain what purpose which code-element fulfils.
-                The terms 'knows', 'called' and 'texted' have already been with the information of the calls and texts issued by the suspects and their acquaintances in February 2017.
-            </p>
+                <h3>Dragnet</h3>
+                <p>There have been charges of insider trading against Katarina Quandt.
+                    The BigCompany AG held a board meeting on 12.02.2017 where they decided to launch a large share-buyback program in February of 2017.
+                    Shortly after this decision on 23.02.2017 Katarina Quandt bought vast amounts of shares from the BigCompany AG which lead us to believe that she had insider information about the program.
+                    To help solve the crime investigations are started using a dragnet, to see which company board member could have leaked the information.
+                </p>
+                <h4>Implementation</h4>
+                <p>To create a dragnet using Datalog is a challenge! We have taken it up and created a dragnet to analyse calls and texts between people of a company.
+                    In this part of the blog we will go into depth how our dragnet works and explain what purpose which code-element fulfils.
+                    The terms 'knows', 'called' and 'texted' have already been with the information of the calls and texts issued by the suspects and their acquaintances in February 2017.
+                </p>
 
-            <h5>Knowing</h5>
-            <p>This first part simply describes that if X knows Y, Y also knows X meaning knowing someone is bi-directional.
-                A connection exists, if a there is a path of people, where one person knows the next one until the target Y is reached.
-            </p>
-            <figure>
-                <div style="background-color: #1E1E1E">
-                    <img class="article-image-dragnet" src="images/blogs/dragnet/links.jpg" alt="Code for who knows who">
-                </div>
-                <figcaption>Codesnippet who knows who</figcaption>
-            </figure>
+                <h5>Knowing</h5>
+                <p>This first part simply describes that if X knows Y, Y also knows X meaning knowing someone is bi-directional.
+                    A connection exists, if a there is a path of people, where one person knows the next one until the target Y is reached.
+                </p>
+                <figure>
+                    <div style="background-color: #1E1E1E">
+                        <img class="article-image-dragnet" src="images/blogs/dragnet/links.jpg" alt="Code for who knows who">
+                    </div>
+                    <figcaption>Codesnippet who knows who</figcaption>
+                </figure>
 
-            <h5>Paths</h5>
-            <p>The term 'get_all_paths' uses recursion to find the path from X to Y.
-                It checks that X is not equals Y and checks that Y is not already in the list, as without these it would create infinite loops.
-                In get short paths, one can search for paths that are limited in the number of links, by defining constraints for L.
-                For example get_short_paths("Berta", Y, P, L) &amp; (L &lt; 5) would return all paths from Berta to persons that are within a range of 5 links. </p>
-            <figure>
-                <div style="background-color: #1E1E1E">
-                    <img class="article-image-dragnet" src="images/blogs/dragnet/paths.jpg" alt="Code paths">
-                </div>
-                <figcaption>Codesnippet paths</figcaption>
-            </figure>
+                <h5>Paths</h5>
+                <p>The term 'get_all_paths' uses recursion to find the path from X to Y.
+                    It checks that X is not equals Y and checks that Y is not already in the list, as without these it would create infinite loops.
+                    In get short paths, one can search for paths that are limited in the number of links, by defining constraints for L.
+                    For example get_short_paths("Berta", Y, P, L) &amp; (L &lt; 5) would return all paths from Berta to persons that are within a range of 5 links. </p>
+                <figure>
+                    <div style="background-color: #1E1E1E">
+                        <img class="article-image-dragnet" src="images/blogs/dragnet/paths.jpg" alt="Code paths">
+                    </div>
+                    <figcaption>Codesnippet paths</figcaption>
+                </figure>
 
-            <h5>Dated Links</h5>
-            <p>Previously the dates of the calls and the texts have been ignored. These informations will now be used in the further steps.</p>
-            <p>Dated links are working quite similar to the previous 'has_link' therm. The difference here is, that an additional rule is introduced.
-                For a dated link to exist the contact from X to Y need to be in a descending date. If X had contact with Z <b>after</b> Z had contact with Y, Y cannot know the information X had.
-                This model is a bit simplified as we're only checking the date and not the time, but the concept stays the same.
-            </p>
-            <figure>
-                <div style="background-color: #1E1E1E">
-                    <img class="article-image-dragnet" src="images/blogs/dragnet/dated-links.jpg" alt="Code for dated links">
-                </div>
-                <figcaption>Codesnippet for dated links</figcaption>
-            </figure>
+                <h5>Dated Links</h5>
+                <p>Previously the dates of the calls and the texts have been ignored. These informations will now be used in the further steps.</p>
+                <p>Dated links are working quite similar to the previous 'has_link' therm. The difference here is, that an additional rule is introduced.
+                    For a dated link to exist the contact from X to Y need to be in a descending date. If X had contact with Z <b>after</b> Z had contact with Y, Y cannot know the information X had.
+                    This model is a bit simplified as we're only checking the date and not the time, but the concept stays the same.
+                </p>
+                <figure>
+                    <div style="background-color: #1E1E1E">
+                        <img class="article-image-dragnet" src="images/blogs/dragnet/dated-links.jpg" alt="Code for dated links">
+                    </div>
+                    <figcaption>Codesnippet for dated links</figcaption>
+                </figure>
 
-            <h5>Dated Paths</h5>
-            <p>For the dated paths we implement a restriction that de date itself is within the range we are interested into.
-                This can be achieved by connecting the 'get_all_paths' terms with the constraints for (D &gt;= date_board_decision) & (D &lt;= date_shares_bought). Furthermore this therm contains a variable A which stores the path of dates. </p>
-            <figure>
-                <div style="background-color: #1E1E1E">
-                    <img class="article-image-dragnet" src="images/blogs/dragnet/dated-paths.jpg" alt="Code for dated paths">
-                </div>
-                <figcaption>Codesnippet for dated paths</figcaption>
-            </figure>
+                <h5>Dated Paths</h5>
+                <p>For the dated paths we implement a restriction that de date itself is within the range we are interested into.
+                    This can be achieved by connecting the 'get_all_paths' terms with the constraints for (D &gt;= date_board_decision) & (D &lt;= date_shares_bought). Furthermore this therm contains a variable A which stores the path of dates. </p>
+                <figure>
+                    <div style="background-color: #1E1E1E">
+                        <img class="article-image-dragnet" src="images/blogs/dragnet/dated-paths.jpg" alt="Code for dated paths">
+                    </div>
+                    <figcaption>Codesnippet for dated paths</figcaption>
+                </figure>
 
-            <h4>Results</h4>
-            <p>In the tables below, you can see that the possible suspects differ when we also take the date into consideration.
-                These board members are still only suspects, because with the data provided we cannot tell what information has beeen exchanged.
-                There could also be more suspects, because a board member could also have met Katarina Quandt personally.
-                Sadly for this case we don't have any evidence at hand. The investigation has to go on with more data.</p>
-            <table>
-                <caption>Paths from board members to Quandt Katarina with Depth = 5</caption>
-                <tbody>
-                    <tr>
-                        <th>Board Member</th>
-                        <th>Path</th>
-                    </tr>
-                    <tr>
-                        <td>Eder Eva</td>
-                        <td>Egerer Leni -> Scheunemann Dario -> Quandt Katarina</td>
-                    </tr>
-                    <tr>
-                        <td>Eder Eva</td>
-                        <td>Egerer Leni -> Walz Grit -> Kretzer Julian -> Scheunemann Dario -> Quandt Katarina</td>
-                    </tr>
-                    <tr>
-                        <td>Michael Jill</td>
-                        <td>Walz Grit -> Kretzer Julian -> Scheunemann Dario -> Quandt Katarina</td>
-                    </tr>
-                    <tr>
-                        <td>Michael Jill</td>
-                        <td>Egerer Leni -> Walz Grit -> Kretzer Julian -> Scheunemann Dario -> Quandt Katarina</td>
-                    </tr>
-                </tbody>
-            </table>
-            <table>
-                <caption>Paths from board members to Quandt Katarina with respect to dates</caption>
-                <tbody>
-                    <tr>
-                        <th>Board Member</th>
-                        <th>Path</th>
-                    </tr>
-                    <tr>
-                        <td>Eder Eva</td>
-                        <td>12.02.2017 -> Egerer Leni -> 13.02.2017 -> Scheunemann Dario -> 16.02.2017 -> Quandt Katarina</td>
-                    </tr>
-                    <tr>
-                        <td>Eder Eva</td>
-                        <td>12.02.2017 -> Egerer Leni -> 17.02.2017 -> Welling Isabelle -> 20.02.2017 -> Lass Rudolf -> 21.02.2017 -> Quandt Katarina</td>
-                    </tr>
-                    <tr>
-                        <td>Eder Eva</td>
-                        <td>12.02.2017 -> Egerer Leni -> 13.02.2017 -> Scheunemann Dario -> 13.02.2017 -> Goerke Ella -> 14.02.2017 -> Klingler Karlotta -> 19.02.2017 -> Leibold Thorge -> 21.02.2017 -> Edel Margrit -> 23.02.2017 -> Quandt Katarina</td>
-                    </tr>
-                </tbody>
-            </table>
+                <h4>Results</h4>
+                <p>In the tables below, you can see that the possible suspects differ when we also take the date into consideration.
+                    These board members are still only suspects, because with the data provided we cannot tell what information has beeen exchanged.
+                    There could also be more suspects, because a board member could also have met Katarina Quandt personally.
+                    Sadly for this case we don't have any evidence at hand. The investigation has to go on with more data.</p>
+                <table>
+                    <caption>Paths from board members to Quandt Katarina with Depth = 5</caption>
+                    <tbody>
+                        <tr>
+                            <th>Board Member</th>
+                            <th>Path</th>
+                        </tr>
+                        <tr>
+                            <td>Eder Eva</td>
+                            <td>Egerer Leni -> Scheunemann Dario -> Quandt Katarina</td>
+                        </tr>
+                        <tr>
+                            <td>Eder Eva</td>
+                            <td>Egerer Leni -> Walz Grit -> Kretzer Julian -> Scheunemann Dario -> Quandt Katarina</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Jill</td>
+                            <td>Walz Grit -> Kretzer Julian -> Scheunemann Dario -> Quandt Katarina</td>
+                        </tr>
+                        <tr>
+                            <td>Michael Jill</td>
+                            <td>Egerer Leni -> Walz Grit -> Kretzer Julian -> Scheunemann Dario -> Quandt Katarina</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <caption>Paths from board members to Quandt Katarina with respect to dates</caption>
+                    <tbody>
+                        <tr>
+                            <th>Board Member</th>
+                            <th>Path</th>
+                        </tr>
+                        <tr>
+                            <td>Eder Eva</td>
+                            <td>12.02.2017 -> Egerer Leni -> 13.02.2017 -> Scheunemann Dario -> 16.02.2017 -> Quandt Katarina</td>
+                        </tr>
+                        <tr>
+                            <td>Eder Eva</td>
+                            <td>12.02.2017 -> Egerer Leni -> 17.02.2017 -> Welling Isabelle -> 20.02.2017 -> Lass Rudolf -> 21.02.2017 -> Quandt Katarina</td>
+                        </tr>
+                        <tr>
+                            <td>Eder Eva</td>
+                            <td>12.02.2017 -> Egerer Leni -> 13.02.2017 -> Scheunemann Dario -> 13.02.2017 -> Goerke Ella -> 14.02.2017 -> Klingler Karlotta -> 19.02.2017 -> Leibold Thorge -> 21.02.2017 -> Edel Margrit -> 23.02.2017 -> Quandt Katarina</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <div id="disqus_thread"></div>
             <script>
@@ -317,7 +321,7 @@
             </script>
             <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
         </div>
-    </div>
+    </section>
 
 
     <!-- ##### Footer Area Start ##### -->

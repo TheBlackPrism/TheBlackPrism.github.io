@@ -78,7 +78,7 @@ h5 {
 }
 
 a {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 a,
@@ -589,6 +589,7 @@ img {
         margin-right: 20px;
     }
 }
+
 @media only screen and (max-width: 767px) {
     .header-area .newsbox-main-menu .classy-navbar .nav-brand {
         max-width: 120px;
@@ -859,7 +860,19 @@ img {
 }
 
 .blogpost {
+    border-top-style: solid;
+    border-bottom-style: solid;
+    padding: 10px 0px;
+    margin: 20px 0px;
     background: rgba(256, 256, 256, 0.8);
+}
+
+.author {
+    margin-top:0px;
+}
+
+.transparent-background {
+  background: rgba(256, 256, 256, 0.8);
 }
 
 /* :: 7.0 Footer Area CSS */
@@ -2330,6 +2343,7 @@ img {
 }
 
 .nav-brand {
+    transition-duration: 1000ms;
     font-size: 50px;
     font-weight: bolder;
     white-space: nowrap;
@@ -2350,6 +2364,7 @@ img {
     }
 
     .nav-brand {
+        transition-duration: 1000ms;
         font-size: 30px;
         font-weight: 500 !important;
         white-space: nowrap;
