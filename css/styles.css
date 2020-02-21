@@ -548,10 +548,10 @@ img {
 
 @media only screen and (max-width: 767px) {
     #bot-frame {
-        left: 80px;
+        left: 70px;
         bottom: 30px;
-        height: 430px;
-        width: 350px;
+        height: 400px;
+        width: 300px;
     }
 }
 
