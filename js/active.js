@@ -105,6 +105,18 @@
         });
     }
 
+    document.getElementById('bot-button').onclick = function() {
+      var frame = document.getElementById("bot-frame")
+      if(!frame){
+       var iframe = document.createElement('iframe');
+       iframe.id = "bot-frame"
+       iframe.src = 'https://console.dialogflow.com/api-client/demo/embedded/2b86a5a0-62c4-43af-a33a-136b816569c6';
+       document.body.appendChild(iframe);
+     } else {
+       frame.parentNode.removeChild(frame);
+     }
+    };
+
     // :: 6.0 ScrollUp Active Code
     if ($.fn.scrollUp) {
         browserWindow.scrollUp({
