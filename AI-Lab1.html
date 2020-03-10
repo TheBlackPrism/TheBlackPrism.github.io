@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154262640-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-154262640-1');
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>The Black Prism</title>
+    <meta name="description" content="some very important website">
+    <meta name="author" content="TheBlackPrism">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:title" content="The Black Prism" />
+    <meta property="og:url" content="https://theblackprism.ch" />
+    <meta property="og:image" content="https://theblackprism.ch/images/Black-Prism_Logo_V05_Black.png" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+    <!-- ##### Header Area Start ##### -->
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="newsbox-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="newsboxNav">
+
+                        <!-- Nav brand -->
+                        <a href="index.html" class="nav-brand">The Black Prism</a>
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="blogs.html">Blog</a>
+                                        <ul class="dropdown">
+                                            <li><a href="blogs.html">All Blogs</a></li>
+                                            <li><a href="AI-Lab1.html">AI Lab1</a></li>
+                                            <li><a href="2048-AI.html">Artificial Intelligence</a></li>
+                                            <li><a href="dragnet.html">CSP & Datalog</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="photos.html">Photos</a>
+                                        <ul class="dropdown">
+                                            <li><a href="photos.html">All Photos</a></li>
+                                            <li><a href="africa.html">Africa</a></li>
+                                            <li><a href="mountains.html">Mountains</a></li>
+                                            <li><a href="diverse.html">Diverse</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="https://github.com/TheBlackPrism.html">Github</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Hero Area Start ##### -->
+    <section class="section-padding-200">
+        <div class="container">
+            <h2>AI-Lab1</h2>
+            <h5 class="author">By Dano Roost, Jennifer Schürch & Yves Lütjens</h5>
+            <h5 class="author">10.03.2020</h5>
+
+            <div class="blogpost">
+                <p>The aim of this lab is to analyse the genre of artists based only
+                    on their song lyrics, which is done using unsupervised machine learning approaches.<br>
+                    An overview with the artists and their genre can be found on a dendrogram <a href="dendrogram_artists.svg">here</a>
+                </p>
+                <h4>Vectorizing with TF IDF</h4>
+                <p>To calculate the TF IDF Matrix, the lyrics are split into words.
+                    Those words include many words that don't add any semantic meaning to the lyrics.
+                    These words are called stopwords and were extracted from the text to make sure,
+                    that the most frequent words contain meaning. The python natural language toolkit library provides a list of stop words.
+                </p>
+                <h5>Most frequent words per artist</h5>
+                <p>When we look at some examples of the 10 most frequent words,
+                    there are some similarities between artists from the same genre.
+                    At the same time, the most frequent words can be very different,
+                    as we can see from the metal genre with bathory and annihilator.
+                </p>
+                <div class="col-md-2">
+                    <table class="article-statistic">
+                        <tr>
+                            <th>50-Cent</th>
+                            <th>Hip-Hop</th>
+                        </tr>
+                        <tr>
+                            <th>Frequency</th>
+                            <td>0.019160</td>
+                            <td>0.015574</td>
+                            <td>0.015098</td>
+                            <td>0.013911</td>
+                            <td>0.011044</td>
+                            <td>0.011017</td>
+                            <td>0.010379</td>
+                            <td>0.008816</td>
+                            <td>0.007108</td>
+                            <td>0.007081</td>
+                        </tr>
+                        <tr>
+                            <th>Words</th>
+                            <td>'get'</td>
+                            <td>'nigga'</td>
+                            <td>'like'</td>
+                            <td>'got'</td>
+                            <td>'know'</td>
+                            <td>'ain't'</td>
+                            <td>'shit'</td>
+                            <td>'niggas'</td>
+                            <td>'see'</td>
+                            <td>'ya'</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>Eminem</th>
+                            <th>Hip-Hop</th>
+                        </tr>
+                        <tr>
+                            <th>Frequency</th>
+                            <td>0.015370</td>
+                            <td>0.011441</td>
+                            <td>0.007853</td>
+                            <td>0.007699</td>
+                            <td>0.007675</td>
+                            <td>0.006965</td>
+                            <td>0.006567</td>
+                            <td>0.006236</td>
+                            <td>0.005665</td>
+                            <td>0.005267</td>
+                        </tr>
+                        <tr>
+                            <th>Words</th>
+                            <td>'like'</td>
+                            <td>'get'</td>
+                            <td>'got'</td>
+                            <td>'know'</td>
+                            <td>'shit'</td>
+                            <td>'back'</td>
+                            <td>'ain't'</td>
+                            <td>'fuck'</td>
+                            <td>'go'</td>
+                            <td>'see'</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>Bathory</th>
+                            <th>Metal</th>
+                        </tr>
+                        <tr>
+                            <th>Frequency</th>
+                            <td>0.007725</td>
+                            <td>0.007483</td>
+                            <td>0.007483</td>
+                            <td>0.006819</td>
+                            <td>0.006156</td>
+                            <td>0.005673</td>
+                            <td>0.005009</td>
+                            <td>0.004949</td>
+                            <td>0.004888</td>
+                            <td>0.004767</td>
+                        </tr>
+                        <tr>
+                            <th>Words</th>
+                            <td>'death'</td>
+                            <td>'sky'</td>
+                            <td>'blood'</td>
+                            <td>'one'</td>
+                            <td>'fire'</td>
+                            <td>'black'</td>
+                            <td>'die'</td>
+                            <td>'high'</td>
+                            <td>'high'</td>
+                            <td>'life'</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th>Avicii</th>
+                            <th>Electronic</th>
+                        </tr>
+                        <tr>
+                            <th>Frequency</th>
+                            <td>0.024273</td>
+                            <td>0.021116</td>
+                            <td>0.015130</td>
+                            <td>0.013606</td>
+                            <td>0.013606</td>
+                            <td>0.011538</td>
+                            <td>0.010884</td>
+                            <td>0.010558</td>
+                            <td>0.010449</td>
+                            <td>0.009796</td>
+                        </tr>
+                        <tr>
+                            <th>Words</th>
+                            <td>'one'</td>
+                            <td>'love'</td>
+                            <td>'never'</td>
+                            <td>'like'</td>
+                            <td>'get'</td>
+                            <td>'make'</td>
+                            <td>'could'</td>
+                            <td>'need'</td>
+                            <td>'way'</td>
+                            <td>'tell'</td>
+                        </tr>
+                    </table>
+                </div>
+                <h4>Clustering K-Means</h4>
+                <p>Clustering with K-Means is strongly dependent of the first few values
+                    of the dataset, as they initialize the different centroids.
+                    The most interesting Clusters are the following two:</p>
+                <div class="col-md-6">
+                    <table class="article-statistic">
+                        <tr>
+                            <th>2</th>
+                            <th>4</th>
+                        </tr>
+                        <tr>
+                            <td>busta-rhymes: HIP-HOP</td>
+                            <td>clannad: FOLK</td>
+                        </tr>
+                        <tr>
+                            <td>game: HIP-HOP</td>
+                            <td>andre-rieu: FOLK</td>
+                        </tr>
+                        <tr>
+                            <td>50-cent: HIP-HOP</td>
+                            <td>ataraxia: FOLK</td>
+                        </tr>
+                        <tr>
+                            <td>chamillionaire: HIP-HOP</td>
+                            <td>cradle-of-filth: METAL</td>
+                        </tr>
+                        <tr>
+                            <td>e-40: HIP-HOP</td>
+                            <td>bathory: METAL</td>
+                        </tr>
+                        <tr>
+                            <td>dmx: HIP-HOP</td>
+                            <td>cannibal-corpse: METAL</td>
+                        </tr>
+                        <tr>
+                            <td>2pac: HIP-HOP</td>
+                            <td>clancy-brothers: FOLK</td>
+                        </tr>
+                        <tr>
+                            <td>drake: HIP-HOP</td>
+                            <td>celtic-woman: FOLK</td>
+                        </tr>
+                        <tr>
+                            <td>eminem: HIP-HOP</td>
+                            <td>agoraphobic-nosebleed: METAL</td>
+                        </tr>
+                    </table>
+                </div>
+                <p>The lyrics of Hip-Hop seem to be extremly different than other genres,
+                    as cluster 2 only contains the one genre. Cluster 4 consits of Folk and
+                    Metal which concludes that this two genres are very similar to each other
+                    in therms of the lyrics.
+                </p>
+                <h4>PCA</h4>
+                <p>To be able to visualize the different artists and genres we applied
+                    the Principle Component Analysis onto the lyrics.
+                    As seen in the previous chapter the Hip-Hop genres is very distinct
+                    from the rest of the genres. In contrary to Hip-Hop, Pop spreads very widely.
+                    It inherits some properties from most of the genres.
+                </p>
+
+                <figure>
+                    <img class="article-image" src="images/blogs/PCA_Artist_Genre.png" alt="Distribution Artists">
+                </figure>
+                <h4>Additional Task</h4>
+                <p>As additional task, we experimented with word vectors for topic extraction.
+                    We again counted the words for each singer and then took the most common few.
+                    For those most fequent words, the then calculated the average vector and seached
+                    for the word, that was closest to this average vector.
+                    For the vectors, we utilized SpaCy with pretrained GloVe vectors.
+                    Additionally, we tried the procedure with different parameters to
+                    get multiple topic-candidates for each artist. In a final steop,
+                    we merged these topics together.
+                    While the topics of some artists, do not make a lot of sense,
+                    some are actually pretty fitting:<br><br>
+                    "beyonce-knowles": "love, girl"<br>
+                    "eazy-e": "hoe, shit"<br>
+                    "ali-dee-and-the-deekompressors": "race-car, automobile, racer"<br>
+                    "fair-sex": "thing, enough, love, bite"<br>
+                    "babydoll": "baby, flulike, love, fever"<br>
+                </p>
+            </div>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /**
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                **/
+                (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document,
+                        s = d.createElement('script');
+                    s.src = 'https://blackprism.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
+    </section>
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <!-- Footer Logo -->
+        <div class="footer-logo mb-100">
+            <a href="index.html">The Black Prism</a>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <div id="particles-js"></div>
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
