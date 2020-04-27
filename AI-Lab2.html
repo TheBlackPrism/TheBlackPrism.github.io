@@ -5,17 +5,20 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154262640-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+        window.dataLayer = window.dataLayer || [];
 
-      gtag('config', 'UA-154262640-1');
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-154262640-1');
     </script>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
     <title>The Black Prism</title>
-    <meta name="description" content="Overview over all blogs">
+    <meta name="description" content="some very important website">
     <meta name="author" content="TheBlackPrism">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -106,30 +109,77 @@
     </header>
     <!-- ##### Header Area End ##### -->
 
-    <section class="hero-area">
-      <div class="pt-4 text-center">
-          <div class="col-12">
-              <h2 class="mb-4">About Me</h2>
-          </div>
-      </div>
+    <!-- ##### Hero Area Start ##### -->
+    <section class="section-padding-200">
+        <div class="container">
+            <h2>AI-Lab2 - Supervised Learning</h2>
+            <h5 class="author">By Dano Roost, Jennifer Schürch & Yves Lütjens</h5>
+            <h5 class="author">27.04.2020</h5>
 
-      <!-- ##### Hero Area Start ##### -->
-      <div class="section-padding-200">
-          <div class="container">
-            <div class="about">
-                <img src="images/me_squared.jpg"/>
-              <p class="text-center">I am a computer science student that likes to take a brake from algorithms, by tweaking his webpage a little.<br>
-                All Photographs on my homepage are made by me during my holidays or on my occasional hikes.
-              </p>
+            <div class="blogpost">
+                <p>The aim of this lab is to train a binary classifier that labels text with hate speech or not hate speech.
+                    The baseline already achieves an f1-score of 94% but with a very unbalanced set, meaning 11% are hate speeches.
+                    <br><br>
+                    We tried different approaches to achieve the highest possible score and compared them against each other.
+                    Furthermore we created a balanced dataset that has a 50-50 ratio of hate speeches versus non-hate speeches,
+                    thus giving a less biased view how well the classifiers perform.
+                </p>
+
+                <h4>Approach</h4>
+                <p>
+                    In total we implemented four different approaches: a Fully Connected Neural Network,
+                    a Regressive Neural Network (RNN), a Deep Neural Network (DNN) and a Convolutional Neural Network (CNN).
+                    The fully connected and DNN are based on the PyTorch deep learning library, while the RNN and CNN are based on the Keras library.
+                    The implementation of the models can be found <a href="https://github.com/Danoishere/KI2_Lab2_FS2020">here<a>.
+                </p>
+
+                <h4>Analysis</h4>
+                <p>As seen in the following plots, using a balanced dataset heavily impacts the performance of the classifiers.
+                    Especially the Neural Net classifier’s F1-Score decreases by 13%, which is significantly more than the others 7-10%.
+                    <figure>
+                        <div class="single-slide">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <img class="article-image" src="images/blogs/ai/f1_scores.png" alt="F1-Score">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img class="article-image" src="images/blogs/ai/accuracy.png" alt="Accuracy">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </figure>
             </div>
-          </div>
-      </div>
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /**
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                **/
+                (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document,
+                        s = d.createElement('script');
+                    s.src = 'https://blackprism.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+        </div>
     </section>
-    <div class="mb-50"></div>
+
+
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <!-- Footer Logo -->
-        <div class="footer-logo mb-50">
+        <div class="footer-logo mb-100">
             <a href="index.html">The Black Prism</a>
         </div>
     </footer>
