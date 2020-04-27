@@ -117,8 +117,10 @@
             <h5 class="author">27.04.2020</h5>
 
             <div class="blogpost">
-                <p>The aim of this lab is to train a binary classifier that labels text with hate speech or not hate speech.
-                    The baseline already achieves an f1-score of 94% but with a very unbalanced set, meaning 11% are hate speeches.
+                <p>
+                    The aim of this lab is to train a binary classifier that labels text with hate speech or not hate speech.
+                    The baseline already achieves an accuracy of 90% but with a very unbalanced set,
+                    meaning 11% are hate speeches and the rest are non-hate speeches.
                     <br><br>
                     We tried different approaches to achieve the highest possible score and compared them against each other.
                     Furthermore we created a balanced dataset that has a 50-50 ratio of hate speeches versus non-hate speeches,
@@ -134,22 +136,41 @@
                 </p>
 
                 <h4>Analysis</h4>
-                <p>As seen in the following plots, using a balanced dataset heavily impacts the performance of the classifiers.
-                    Especially the Neural Net classifier’s F1-Score decreases by 13%, which is significantly more than the others 7-10%.
-                    <figure>
-                        <div class="single-slide">
-                            <div class="container-fluid">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <img class="article-image" src="images/blogs/ai/f1_scores.png" alt="F1-Score">
-                                    </div>
-                                    <div class="col-md-6">
-                                        <img class="article-image" src="images/blogs/ai/accuracy.png" alt="Accuracy">
-                                    </div>
+                <p>
+                    As seen in the following plots, using a balanced or unbalanced dataset heavily impacts the performance of the classifiers.
+                    The baseline as well as the fully connected and regressive neural network struggle with the unbalanced dataset in class 1.
+                    The DNN and CNN on the other hand drop with the balanced dataset in class 0.
+                </p>
+                <figure>
+                    <div class="single-slide">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="article-image" src="images/blogs/ai/lab2_f1_score_unbalanced.png" alt="F1-Score Unbalanced">
+                                </div>
+                                <div class="col-md-6">
+                                    <img class="article-image" src="images/blogs/ai/lab2_f1_score_balanced.png" alt="F1-Score Balanced">
                                 </div>
                             </div>
                         </div>
-                    </figure>
+                    </div>
+                </figure>
+                <p>
+                    Analysing the accuracy of the Classifiers as seen in the following plot, the CNN performs the best, followed by RNN.
+                    Interestingly the baseline algorithm loses the least accuracy if evaluated with the balanced dataset compared to the unbalanced one,
+                    but the CNN still outruns it’s performance.
+                </p>
+                <figure>
+                    <div class="single-slide">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="article-image" src="images/blogs/ai/lab2_accuracy.png" alt="Accuracy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
             </div>
             <div id="disqus_thread"></div>
             <script>
