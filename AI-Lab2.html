@@ -114,7 +114,7 @@
         <div class="container">
             <h2>AI-Lab2 &mdash; Supervised Learning</h2>
             <h5 class="author">By Dano Roost, Jennifer Schürch & Yves Lütjens</h5>
-            <h5 class="author">27.04.2020</h5>
+            <h5 class="author">04.05.2020</h5>
 
             <div class="blogpost">
                 <p>
@@ -126,22 +126,27 @@
                 <h4>Approach</h4>
                 <p>
                     We tried different approaches to achieve the highest possible score and compared them against each other.
-                    Furthermore we created a balanced dataset that has a 50-50 ratio of hate speeches versus non-hate speeches,
+                    Furthermore, we created a balanced dataset that has a 50-50 ratio of hate speeches versus non-hate speeches,
                     thus giving a less biased view how well the classifiers perform.
+                    In total we implemented four different approaches:
                 </p>
-
+                <ul>
+                    <li>Two different fully connected Neural Network with different layer sizes and TFIDF-Vectors</li>
+                    <li>A Recurrent Neural Network (RNN) with pretrained word embeddings (GloVe)</li>
+                    <li>A Convolutional Neural Network (CNN) with pretrained word embeddings (GloVe)</li>
+                </ul>
                 <p>
-                    In total we implemented four different approaches: a Fully Connected Neural Network,
-                    a Regressive Neural Network (RNN), a Deep Neural Network (DNN) and a Convolutional Neural Network (CNN).
-                    The fully connected and DNN are based on the Keras deep learning library, while the RNN and CNN are based on the PyTorch library.
-                    The implementation of the models can be found <a href="https://github.com/Danoishere/KI2_Lab2_FS2020">here<a>.
+                    The two fully connected NNs are implemented in Keras, the RNN and the CNN are implemented in PyTorch.
+                    These two networks use TorchText for pre-processing and word embedding/padding/etc.
                 </p>
 
                 <h4>Evaluation</h4>
                 <p>
-                    As seen in the following plots, using a balanced or unbalanced dataset heavily impacts the performance of the classifiers.
-                    The baseline as well as the fully connected and regressive neural network struggle with the unbalanced dataset in class 1.
-                    The DNN and CNN on the other hand drop with the balanced dataset in class 0.
+                    All evaluations are performed on a separate test set. As seen in the following plots,
+                    using a balanced or unbalanced dataset heavily impacts the performance of the classifiers.
+                    The baseline as well as the fully connected 2 NN struggle with the unbalanced dataset in class 1.
+                    The RNN and the CNN on the other hand, are performing better but still perform quite far from perfect,
+                    at least in the unbalanced case.
                 </p>
                 <figure>
                     <div class="single-slide">
@@ -158,9 +163,11 @@
                     </div>
                 </figure>
                 <p>
-                    Analysing the accuracy of the classifiers as seen in the following plot, the CNN performs the best, followed by the RNN.
+                    Analysing the accuracy of the classifiers as seen in the following plot,
+                    the CNN performs the best, followed by the RNN.
                     Surprisingly the baseline algorithm loses the least accuracy if comparing the balanced dataset with the unbalanced one,
-                    but all proposed solutions outrun the baseline in terms of accuracy. This leads to the conclusion that a CNN is best suited for the task at hand,
+                    but all proposed solutions outrun the baseline in terms of accuracy.
+                    This leads to the conclusion that a CNN is best suited for the task at hand,
                     but all of the applied techniques perform well for the given problem statement.
                 </p>
                 <figure>
@@ -174,7 +181,70 @@
                         </div>
                     </div>
                 </figure>
+
+                <h4>Learning Curve CNN</h4>
+                <p>
+                    To verify our CNN approach we analysed the learning curves of the accuracy and the loss function from the CNN.
+                    We conclude, that the loss curve settles after 800 batches, which means that the amount of training data is right.
+                    Furthermore we can say that the Model doesn’t over- or underfit as the train and test data curves are very similar.
+                </p>
+                <figure>
+                    <div class="single-slide">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <img class="article-image" src="images/blogs/ai/lab2_learning_curve_cnn_acc.png" alt="Learning Curve CNN Accuracy">
+                                </div>
+                                <div class="col-md-6">
+                                    <img class="article-image" src="images/blogs/ai/lab2_learning_curve_cnn_loss.png" alt="Learning Curve CNN Loss">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <h4>Console Application</h4>
+                <p>
+                    Additionally, we made a small console application, which returns the hate speech score and up to three words hate words from a given sentence.
+                    There is a pool of words, which strongly correlate with hate speech for example: faggot, ass, stupid, idiot, shit, gay, hell, screw etc.
+                    When these words are present in a given sentence, the hate speech score gets automatically boosted regardless of the context used in the sentence.
+                    Below is an example with the word "gay" and "stupid":
+                </p>
+                <div class="col-md-12">
+                    <table class="article-statistic">
+                        <tr>
+                            <th>Example</th>
+                            <th>Score</th>
+                            <th>Example</th>
+                            <th>Score</th>
+                        </tr>
+                        <tr>
+                            <td>gay</td>
+                            <td>0.34</td>
+                            <td>stupid</td>
+                            <td>0.86</td>
+                        </tr>
+                        <tr>
+                            <td>You are gay</td>
+                            <td>0.55</td>
+                            <td>You are stupid</td>
+                            <td>0.94</td>
+                        </tr>
+                        <tr>
+                            <td>I am gay</td>
+                            <td>0.55</td>
+                            <td>I am stupid</td>
+                            <td>0.94</td>
+                        </tr>
+                        <tr>
+                            <td>The word gay had originally a different meaning</td>
+                            <td>0.54</td>
+                            <td>I have never felt so stupid in my life</td>
+                            <td>0.90</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
+
             <div id="disqus_thread"></div>
             <script>
                 /**

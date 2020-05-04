@@ -108,6 +108,16 @@ ol li {
     list-style: none;
 }
 
+.blogpost li {
+    list-style: inside;
+    list-style-position: inside;
+    color: #404040;
+    font-size: 18px;
+    line-height: 1.5;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
 .article-image-rect {
     width: 300px;
 }
@@ -925,11 +935,11 @@ img {
 }
 
 .author {
-    margin-top:0px;
+    margin-top: 0px;
 }
 
 .transparent-background {
-  background: rgba(256, 256, 256, 0.8);
+    background: rgba(256, 256, 256, 0.8);
 }
 
 /* :: 7.0 Footer Area CSS */
