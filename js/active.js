@@ -1,11 +1,11 @@
-(function ($) {
+(function($) {
     'use strict';
 
     var browserWindow = $(window);
 
     // :: 1.0 Preloader Active Code
-    browserWindow.on('load', function () {
-        $('.preloader').fadeOut('slow', function () {
+    browserWindow.on('load', function() {
+        $('.preloader').fadeOut('slow', function() {
             $(this).remove();
         });
     });
@@ -45,28 +45,28 @@
             animateOut: 'fadeOut'
         });
 
-        welcomeSlide.on('translate.owl.carousel', function () {
+        welcomeSlide.on('translate.owl.carousel', function() {
             var slideLayer = $("[data-animation]");
-            slideLayer.each(function () {
+            slideLayer.each(function() {
                 var anim_name = $(this).data('animation');
                 $(this).removeClass('animated ' + anim_name).css('opacity', '0');
             });
         });
 
-        welcomeSlide.on('translated.owl.carousel', function () {
+        welcomeSlide.on('translated.owl.carousel', function() {
             var slideLayer = welcomeSlide.find('.owl-item.active').find("[data-animation]");
-            slideLayer.each(function () {
+            slideLayer.each(function() {
                 var anim_name = $(this).data('animation');
                 $(this).addClass('animated ' + anim_name).css('opacity', '1');
             });
         });
 
-        $("[data-delay]").each(function () {
+        $("[data-delay]").each(function() {
             var anim_del = $(this).data('delay');
             $(this).css('animation-delay', anim_del);
         });
 
-        $("[data-duration]").each(function () {
+        $("[data-duration]").each(function() {
             var anim_dur = $(this).data('duration');
             $(this).css('animation-duration', anim_dur);
         });
@@ -105,17 +105,21 @@
         });
     }
 
-    document.getElementById('bot-button').onclick = function() {
-      var frame = document.getElementById("bot-frame")
-      if(!frame){
-       var iframe = document.createElement('iframe');
-       iframe.id = "bot-frame"
-       iframe.src = 'https://console.dialogflow.com/api-client/demo/embedded/9da87473-b318-4b6c-ac84-3b5e4e78760c';
-       document.body.appendChild(iframe);
-     } else {
-       frame.parentNode.removeChild(frame);
-     }
-    };
+    /**
+        //Tripbot button implementation
+        document.getElementById('bot-button').onclick = function() {
+          var frame = document.getElementById("bot-frame")
+          if(!frame){
+           var iframe = document.createElement('iframe');
+           iframe.id = "bot-frame"
+           iframe.src = 'https://console.dialogflow.com/api-client/demo/embedded/9da87473-b318-4b6c-ac84-3b5e4e78760c';
+           document.body.appendChild(iframe);
+         } else {
+           frame.parentNode.removeChild(frame);
+         }
+        };
+
+    **/
 
     // :: 6.0 ScrollUp Active Code
     if ($.fn.scrollUp) {
@@ -171,7 +175,7 @@
     }
 
     // :: 10.0 Prevent Default a Click
-    $('a[href="#"]').on('click', function ($) {
+    $('a[href="#"]').on('click', function($) {
         $.preventDefault();
     });
 
