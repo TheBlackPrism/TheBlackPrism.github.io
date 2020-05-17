@@ -23,6 +23,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    <link rel="stylesheet" href="./css/gallery-style.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 
     <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
@@ -132,8 +135,12 @@
                     to force the algorithm to keep the highest value there. The board score distribution for this version looked like this:
                 </p>
                 <figure>
-                    <img class="article-image-rect" src="images/blogs/ai/board_bonus_heuristic.jpg" alt="Bonus distribution heuristic">
-                    <figcaption>Bonus distribution Hierarchical</figcaption>
+                    <a href="images/blogs/ai/board_bonus_heuristic.jpg" class="d-block photo-item" data-fancybox="gallery">
+                        <img class="article-image-rect" src="images/blogs/ai/board_bonus_heuristic.jpg" alt="Bonus distribution heuristic" class="img-fluid">
+                        <div class="photo-text-more">
+                            <span class="icon icon-search">Bonus distribution Hierarchical</span>
+                        </div>
+                    </a>
                 </figure>
                 <p>These improvements got us way closer to our aim, overall the algorithm scored an average of 7'000 points.<br>
                     We further improved it by giving a neighbourbonus which we had in the Check Score algorithm, for tiles of the same value and weighted empty tiles too, so the algorithm had more interest in merging tiles.
@@ -185,12 +192,20 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img class="article-statistic" src="images/blogs/ai/scores_heuristicai.png" alt="scores heuristic ai">
-                                    <figcaption>Distribution of the heuristics score over 200 games</figcaption>
+                                    <a href="images/blogs/ai/scores_heuristicai.png" class="d-block photo-item" data-fancybox="gallery">
+                                        <img src="images/blogs/ai/scores_heuristicai.png" alt="scores heuristic ai" class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search">Distribution of the heuristics score over 200 games</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-6">
-                                    <img class="article-statistic" src="images/blogs/ai/highest_tiles_reached_heuristicai.png" alt="highest reached tiles heuristic ai">
-                                    <figcaption>Distribution of the highest reached tiles of the heuristics over 200 games</figcaption>
+                                    <a href="images/blogs/ai/highest_tiles_reached_heuristicai.png" class="d-block photo-item" data-fancybox="gallery">
+                                        <img src="images/blogs/ai/highest_tiles_reached_heuristicai.png" alt="highest reached tiles heuristic ai" class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search">Distribution of the highest reached tiles of the heuristics over 200 games</span>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -208,8 +223,12 @@
                     this measurement destroyed the algorithm and scored lower than the heuristic. We came up with the idea to distribute the factors like a snake and give the corner a hefty bonus, according to the following image:
                 </p>
                 <figure>
-                    <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_heuristic.jpg" alt="Bonus distribution second iteration">
-                    <figcaption>Bonus distribution Improved Heuristic</figcaption>
+                    <a href="images/blogs/ai/board_bonus_searchai_heuristic.jpg" class="d-block photo-item" data-fancybox="gallery">
+                        <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_heuristic.jpg" alt="Bonus distribution second iteration" class="img-fluid">
+                        <div class="photo-text-more">
+                            <span class="icon icon-search">Bonus distribution Improved Heuristic</span>
+                        </div>
+                    </a>
                 </figure>
                 <p>The results showed further improvement in the average score up to 44'000 points. The problem was that the algorithm still did not stack the tiles in a perfect descending order.
                     Sometimes small numbers where caught in the bottom left corner which disturbed the system and lead to big problems after the 4096 tile has been reached. Therefore we came up with the Snakey variation of the heuristic
@@ -228,16 +247,28 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_snakey.jpg" alt="Bonus distribution Snakey">
-                                    <figcaption>Bonus distribution Snakey</figcaption>
+                                    <a href="images/blogs/ai/board_bonus_searchai_snakey.jpg" class="d-block photo-item" data-fancybox="gallery">
+                                        <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_snakey.jpg" alt="Bonus distribution Snakey" class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search">Bonus distribution Snakey</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_diagonaled.jpg" alt="Bonus distribution Snakey">
-                                    <figcaption>Bonus distribution Diagonal</figcaption>
+                                    <a href="images/blogs/ai/board_bonus_searchai_diagonaled.jpg" class="d-block photo-item" data-fancybox="gallery">
+                                        <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_diagonaled.jpg" alt="Bonus distribution Snakey" class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search">Bonus distribution Diagonal</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_squared.jpg" alt="Bonus distribution Snakey">
-                                    <figcaption>Bonus distribution Square</figcaption>
+                                    <a href="images/blogs/ai/board_bonus_searchai_squared.jpg" class="d-block photo-item" data-fancybox="gallery">
+                                        <img class="article-image-rect" src="images/blogs/ai/board_bonus_searchai_squared.jpg" alt="Bonus distribution Snakey" class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search">Bonus distribution Square</span>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -306,12 +337,20 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img class="article-statistic" src="images/blogs/ai/scores.png" alt="score distribution">
-                                    <figcaption>Distribution of the score over 20 games</figcaption>
+                                    <a href="images/blogs/ai/scores.png" class="d-block photo-item" data-fancybox="gallery">
+                                        <img class="article-statistic" src="images/blogs/ai/scores.png" alt="score distribution" class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search">Distribution of the score over 20 games</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-6">
-                                    <img class="article-statistic" src="images/blogs/ai/highest_tiles_reached.png" alt="highest reached tiles">
-                                    <figcaption>Distribution of the highest reached tiles over 20 games</figcaption>
+                                    <a href="images/blogs/ai/highest_tiles_reached.png" class="d-block photo-item" data-fancybox="gallery">
+                                        <img class="article-statistic" src="images/blogs/ai/highest_tiles_reached.png" alt="highest reached tiles" class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search">Distribution of the highest reached tiles over 20 games</span>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -329,11 +368,20 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <img class="article-statistic" src="images/blogs/ai/time_measure_starting_point.png" alt="starting point time measurement">
-                                    <figcaption>Startingboard of the time measurement</figcaption>
+                                    <a href="images/blogs/ai/time_measure_starting_point.png" class="d-block photo-item" data-fancybox="gallery">
+                                        <img class="article-statistic" src="images/blogs/ai/time_measure_starting_point.png" alt="starting point time measurement" class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search">Startingboard of the time measurement</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-4">
-                                    <img class="article-statistic" src="images/blogs/ai/time_per_move_per_depths.png" alt="average time per move per depths">
+                                    <a href="images/blogs/ai/time_per_move_per_depths.png" class="d-block photo-item" data-fancybox="gallery">
+                                        <img class="article-statistic" src="images/blogs/ai/time_per_move_per_depths.png" alt="average time per move per depths" class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search"></span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-4">
                                     <table class="article-statistic">
@@ -422,6 +470,11 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <!-- Gallery js -->
+    <script src="js/jquery/jquery.fancybox.min.js"></script>
+    <script src="js/jquery/jquery.magnific-popup.min.js"></script>
+    <script src="js/gallery-main.js"></script>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/main.js"></script>
 </body>

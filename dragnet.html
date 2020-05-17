@@ -23,6 +23,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    <link rel="stylesheet" href="./css/gallery-style.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 
     <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
@@ -125,23 +128,22 @@
                 <p>In this approach we focused on the adaption of the domain, which means that we only added the all different constraints that each number can
                     only occur once. To insert the existing variables, we restricted the domain of the field to the given number.
                 </p>
-                <figure>
-                    <div style="background-color: #1E1E1E">
-                        <img class="article-image-dragnet" style="height: 230px;" src="images/blogs/dragnet/sudoku-domain.jpg" alt="Code for Sudoku Domain">
-                    </div>
-                    <figcaption>Codesnippet for Sudoku with Domain Adaption</figcaption>
-                </figure>
-
+                <a href="images/blogs/dragnet/sudoku-domain.jpg" style="background-color: #1E1E1E;" class="d-block photo-item" data-fancybox="gallery">
+                    <img class="article-image-dragnet" style="height: 230px;" src="images/blogs/dragnet/sudoku-domain.jpg" alt="Code for Sudoku Domain" class="img-fluid">
+                </a>
+                <div class="photo-text-more">
+                    <span class="icon icon-search">Codesnippet for Sudoku with Domain Adaption</span>
+                </div>
                 <h4>Constraint Addition</h4>
                 <p>In contrary to the solution that has been discussed before, in this approach we add another constraint instead of reducing the domain for existing numbers.
                     this constraint consists of a lambda function which is added to each predefined variable and limits its assignment to the given number.
                 </p>
-                <figure>
-                    <div style="background-color: #1E1E1E">
-                        <img class="article-image-dragnet" style="height: 230px;" src="images/blogs/dragnet/sudoku-constraints.jpg" alt="Code for Sudoku Constraints">
-                    </div>
-                    <figcaption>Codesnippet for Sudoku with Constraints Addition</figcaption>
-                </figure>
+                <a href="images/blogs/dragnet/sudoku-constraints.jpg" style="background-color: #1E1E1E;" class="d-block photo-item" data-fancybox="gallery">
+                    <img class="article-image-dragnet" style="height: 230px;" src="images/blogs/dragnet/sudoku-constraints.jpg" alt="Code for Sudoku Constraints" class="img-fluid">
+                </a>
+                <div class="photo-text-more">
+                    <span class="icon icon-search">Codesnippet for Sudoku with Constraints Addition</span>
+                </div>
 
                 <h4>Comparison</h4>
                 <table>
@@ -178,12 +180,20 @@
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img class="article-image-rect" src="images/blogs/dragnet/hardest_sudoku_before.png" alt="Hardest Sudoku Starting Position">
-                                    <figcaption>Hardest Sudoku Starting Position</figcaption>
+                                    <a href="images/blogs/dragnet/hardest_sudoku_before.png" class="d-block photo-item" data-fancybox="gallery">
+                                        <img class="article-image-rect" src="images/blogs/dragnet/hardest_sudoku_before.png" alt="Hardest Sudoku Starting Position" class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search">Hardest Sudoku Starting Position</span>
+                                        </div>
+                                    </a>
                                 </div>
                                 <div class="col-md-6">
-                                    <img class="article-image-rect" src="images/blogs/dragnet/hardest_sudoku_solved.png" alt="Hardest Sudoku Solution">
-                                    <figcaption>Hardest Sudoku Solution solved with CSP</figcaption>
+                                    <a href="images/blogs/dragnet/hardest_sudoku_solved.png" class="d-block photo-item" data-fancybox="gallery">
+                                        <img class="article-image-rect" src="images/blogs/dragnet/hardest_sudoku_solved.png" alt="Hardest Sudoku Solution" class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search">Hardest Sudoku Solution solved with CSP</span>
+                                        </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -207,24 +217,25 @@
                 <p>This first part simply describes that if X knows Y, Y also knows X meaning knowing someone is bi-directional.
                     A connection exists, if a there is a path of people, where one person knows the next one until the target Y is reached.
                 </p>
-                <figure>
-                    <div style="background-color: #1E1E1E">
-                        <img class="article-image-dragnet" src="images/blogs/dragnet/links.jpg" alt="Code for who knows who">
-                    </div>
-                    <figcaption>Codesnippet who knows who</figcaption>
-                </figure>
+                <a href="images/blogs/dragnet/links.jpg" style="background-color: #1E1E1E;" class="d-block photo-item" data-fancybox="gallery">
+                    <img class="article-image-dragnet" src="images/blogs/dragnet/links.jpg" alt="Code for who knows who" class="img-fluid">
+                </a>
+                <div class="photo-text-more">
+                    <span class="icon icon-search">Codesnippet who knows who</span>
+                </div>
 
                 <h5>Paths</h5>
                 <p>The term 'get_all_paths' uses recursion to find the path from X to Y.
                     It checks that X is not equals Y and checks that Y is not already in the list, as without these it would create infinite loops.
                     In get short paths, one can search for paths that are limited in the number of links, by defining constraints for L.
-                    For example get_short_paths("Berta", Y, P, L) &amp; (L &lt; 5) would return all paths from Berta to persons that are within a range of 5 links. </p>
-                <figure>
-                    <div style="background-color: #1E1E1E">
-                        <img class="article-image-dragnet" src="images/blogs/dragnet/paths.jpg" alt="Code paths">
-                    </div>
-                    <figcaption>Codesnippet paths</figcaption>
-                </figure>
+                    For example get_short_paths("Berta", Y, P, L) &amp; (L &lt; 5) would return all paths from Berta to persons that are within a range of 5 links.
+                </p>
+                <a href="images/blogs/dragnet/paths.jpg" style="background-color: #1E1E1E;" class="d-block photo-item" data-fancybox="gallery">
+                    <img class="article-image-dragnet" src="images/blogs/dragnet/paths.jpg" alt="Code paths" class="img-fluid">
+                </a>
+                <div class="photo-text-more">
+                    <span class="icon icon-search">Codesnippet paths</span>
+                </div>
 
                 <h5>Dated Links</h5>
                 <p>Previously the dates of the calls and the texts have been ignored. These informations will now be used in the further steps.</p>
@@ -232,22 +243,24 @@
                     For a dated link to exist the contact from X to Y need to be in a descending date. If X had contact with Z <b>after</b> Z had contact with Y, Y cannot know the information X had.
                     This model is a bit simplified as we're only checking the date and not the time, but the concept stays the same.
                 </p>
-                <figure>
-                    <div style="background-color: #1E1E1E">
-                        <img class="article-image-dragnet" src="images/blogs/dragnet/dated-links.jpg" alt="Code for dated links">
-                    </div>
-                    <figcaption>Codesnippet for dated links</figcaption>
-                </figure>
+                <a href="images/blogs/dragnet/dated-links.jpg" style="background-color: #1E1E1E;" class="d-block photo-item" data-fancybox="gallery">
+                    <img class="article-image-dragnet" src="images/blogs/dragnet/dated-links.jpg" alt="Code for dated links" class="img-fluid">
+                </a>
+                <div class="photo-text-more">
+                    <span class="icon icon-search">Codesnippet for dated links</span>
+                </div>
 
                 <h5>Dated Paths</h5>
                 <p>For the dated paths we implement a restriction that de date itself is within the range we are interested into.
-                    This can be achieved by connecting the 'get_all_paths' terms with the constraints for (D &gt;= date_board_decision) & (D &lt;= date_shares_bought). Furthermore this therm contains a variable A which stores the path of dates. </p>
-                <figure>
-                    <div style="background-color: #1E1E1E">
-                        <img class="article-image-dragnet" src="images/blogs/dragnet/dated-paths.jpg" alt="Code for dated paths">
-                    </div>
-                    <figcaption>Codesnippet for dated paths</figcaption>
-                </figure>
+                    This can be achieved by connecting the 'get_all_paths' terms with the constraints for (D &gt;= date_board_decision) & (D &lt;= date_shares_bought).
+                    Furthermore this therm contains a variable A which stores the path of dates.
+                </p>
+                <a href="images/blogs/dragnet/dated-paths.jpg" style="background-color: #1E1E1E;" class="d-block photo-item" data-fancybox="gallery">
+                    <img class="article-image-dragnet" src="images/blogs/dragnet/dated-paths.jpg" alt="Code for dated paths" class="img-fluid">
+                </a>
+                <div class="photo-text-more">
+                    <span class="icon icon-search">Codesnippet for dated paths</span>
+                </div>
 
                 <h4>Results</h4>
                 <p>In the tables below, you can see that the possible suspects differ when we also take the date into consideration.
@@ -347,6 +360,11 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <!-- Gallery js -->
+    <script src="js/jquery/jquery.fancybox.min.js"></script>
+    <script src="js/jquery/jquery.magnific-popup.min.js"></script>
+    <script src="js/gallery-main.js"></script>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/main.js"></script>
 </body>

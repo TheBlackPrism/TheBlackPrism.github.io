@@ -23,6 +23,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    <link rel="stylesheet" href="./css/gallery-style.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
     <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
 
     <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
@@ -327,9 +330,13 @@
                     It inherits some properties from most of the genres.
                 </p>
 
-                <figure>
-                    <img class="article-image" src="images/blogs/PCA_Artist_Genre.png" alt="Distribution Artists">
-                </figure>
+                <a href="images/blogs/PCA_Artist_Genre.png" class="d-block photo-item" data-fancybox="gallery">
+                    <img src="images/blogs/PCA_Artist_Genre.png" alt="Distribution Artists" class="img-fluid">
+                    <div class="photo-text-more">
+                        <span class="icon icon-search"></span>
+                    </div>
+                </a>
+                
                 <h4>Additional Task</h4>
                 <p>As additional task, we experimented with word vectors for topic extraction.
                     We again counted the words for each singer and then took the most common few.
@@ -394,6 +401,11 @@
     <script src="js/plugins/plugins.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
+    <!-- Gallery js -->
+    <script src="js/jquery/jquery.fancybox.min.js"></script>
+    <script src="js/jquery/jquery.magnific-popup.min.js"></script>
+    <script src="js/gallery-main.js"></script>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="js/main.js"></script>
 </body>
