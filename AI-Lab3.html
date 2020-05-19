@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154262640-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-154262640-1');
+    </script>
+
+    <!-- Enables Inline Latex -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                processEscapes: true
+            }
+        });
+    </script>
+
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>The Black Prism</title>
+    <meta name="description" content="some very important website">
+    <meta name="author" content="TheBlackPrism">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="css/fancybox.min.css">
+    <link rel="stylesheet" href="./css/gallery-style.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link href='https://fonts.googleapis.com/css?family=Nunito' rel='stylesheet' type='text/css'>
+
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:title" content="The Black Prism" />
+    <meta property="og:url" content="https://theblackprism.ch" />
+    <meta property="og:image" content="https://theblackprism.ch/images/Black-Prism_Logo_V05_Black.png" />
+</head>
+
+<body>
+    <!-- Preloader -->
+    <div class="preloader d-flex align-items-center justify-content-center">
+        <div class="lds-ellipsis">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+        <!-- Navbar Area -->
+        <div class="newsbox-main-menu">
+            <div class="classy-nav-container breakpoint-off">
+                <div class="container-fluid">
+                    <!-- Menu -->
+                    <nav class="classy-navbar justify-content-between" id="newsboxNav">
+
+                        <!-- Nav brand -->
+                        <a href="index.html" class="nav-brand">The Black Prism</a>
+                        <!-- Navbar Toggler -->
+                        <div class="classy-navbar-toggler">
+                            <span class="navbarToggler"><span></span><span></span><span></span></span>
+                        </div>
+
+                        <!-- Menu -->
+                        <div class="classy-menu">
+
+                            <!-- Close Button -->
+                            <div class="classycloseIcon">
+                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                            </div>
+
+                            <!-- Nav Start -->
+                            <div class="classynav">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="blogs.html">Blog</a>
+                                        <ul class="dropdown">
+                                            <li><a href="blogs.html">All Blogs</a></li>
+                                            <li><a href="AI-Lab3.html">AI Lab2</a></li>
+                                            <li><a href="AI-Lab2.html">AI Lab2</a></li>
+                                            <li><a href="AI-Lab1.html">AI Lab1</a></li>
+                                            <li><a href="2048-AI.html">Artificial Intelligence</a></li>
+                                            <li><a href="dragnet.html">CSP & Datalog</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="photos.html">Photos</a>
+                                        <ul class="dropdown">
+                                            <li><a href="photos.html">All Photos</a></li>
+                                            <li><a href="africa.html">Africa</a></li>
+                                            <li><a href="mountains.html">Mountains</a></li>
+                                            <li><a href="diverse.html">Diverse</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="https://github.com/TheBlackPrism.html">Github</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                </ul>
+                            </div>
+                            <!-- Nav End -->
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Hero Area Start ##### -->
+    <section class="section-padding-200">
+        <div class="container">
+            <h2>AI-Lab3 &mdash; Reinforcement Learning</h2>
+            <h5 class="author">By Dano Roost, Jennifer Schürch & Yves Lütjens</h5>
+            <h5 class="author">19.05.2020</h5>
+
+            <div class="blogpost">
+                <p>
+                    The aim of this lab is to implement a Reinforcement Learning algorithm that is able to provide a
+                    good solution
+                    for the Lunar Lander environment. We implemented three different approaches, namely a Deep Q Network
+                    (DQN), a REINFORCE and an Actor-Critic (AC) algorithm. We run all algorithms until the running
+                    reward
+                    exceeds the reward threshold (200 in this case).
+
+                    \begin{equation}reward_{running} = 0.005 * reward_{epsiode} + (1 - 0.05) *
+                    reward_{running}\end{equation}
+
+                    By doing so, we have a measure of how sample efficient each algorithm is. Additionally, we plot the
+                    received
+                    reward for each algorithm. Each environment is rolled out to a maximum of 10000 steps.
+                </p>
+                <h4>Deep Q Network</h4>
+                <p>
+                    In DQN the agent predicts the reward for each possible action and picks the action (greedily) that
+                    promises the
+                    greatest reward, also called Q-value. The Q-value is defined as the following:
+
+                    \begin{equation}Q(s,a) = r(s,a) + \gamma * maxQ(s',a)\end{equation}
+
+                    Where $r(s,a)$ is the Reward of the next action in the current state, $\gamma$ is the reduction
+                    factor that diminishes the influence of rewards the farther they are in the future and $maxQ(s',a)$
+                    is
+                    the
+                    greatest possible reward from the next steps. DQN uses experience replay, a technique where all
+                    selected actions are
+                    recorded, including the resulting reward. To improve performance, two networks are used where one is
+                    only
+                    update periodically to allow the training to be more stable.
+                </p>
+
+                <figure>
+                    <div class="single-slide">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="images/blogs/ai/lab3_dqn.png" class="d-block photo-item"
+                                        data-fancybox="gallery">
+                                        <img src="images/blogs/ai/lab3_dqn.png" alt="Learning Curve DQN"
+                                            class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><br>
+                                        Our implementation of the DQN algorithm scored the best with the following
+                                        parameters
+                                    </p>
+                                    <table>
+                                        <tr>
+                                            <td>$\epsilon$-decay</td>
+                                            <td>0.99</td>
+                                        </tr>
+                                        <tr>
+                                            <td>$\gamma$</td>
+                                            <td>0.99</td>
+                                        </tr>
+                                        <tr>
+                                            <td>learning rate</td>
+                                            <td>0.001</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <p>
+                    The traineds models policy can be viewed in the following video:
+                </p>
+                <div class="video">
+                    <video width="500" height="340" controls>
+                        <source src="vid/lab3_lunarlander_dqn.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <h4>REINFORCE</h4>
+                <p>
+                    The REINFORCE algorithm is one of the first policy gradient algorithms in reinforcement learning.
+                    The difference between this algorithm and the Q-value algorithms is that it tries to learn a
+                    parametrized policy
+                    $\pi(s)$ instead of estimating the Q-values of state-action-pairs. This means, that the policy
+                    output is represented
+                    as a probability distribution of actions rather than a set of Q-value estimates. To get this
+                    probability
+                    distribution, the output is passed through a softmax activation. To update the weight of the
+                    network, the logvalues
+                    of the policy are multiplied by the total discounted received reward $G_t = R_t + \gamma R_{t+1} +
+                    \gamma^2R_{t+2} + ...$,
+                    to lift the future probability of good policy outputs.
+
+                    \begin{equation}\nabla J(\theta) = \nabla_\theta log \pi(s,a) * G_t\end{equation}
+
+                    Unlike the DQN-algorithm, REINFORCE does not use replay experience but updates the network after
+                    each
+                    environment rollout.<br>
+                    In the learning curve in Figure 2, we see that there are extreme outliners with negative scores
+                    exceeding -2000 in the early stages of the training. After the initial increase, the algorithm
+                    stabilizes and improves over time. Almost 3500 episodes are required to train a good solution with
+                    the REINFORCE algorithm and the chosen parameters.
+                </p>
+                <figure>
+                    <div class="single-slide">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="images/blogs/ai/lab3_reinforce.png" class="d-block photo-item"
+                                        data-fancybox="gallery">
+                                        <img src="images/blogs/ai/lab3_reinforce.png" alt="Learning Curve Reinforce"
+                                            class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><br>
+                                        Our implementation of the REINFORCE algorithm scored the best with the following
+                                        parameters
+                                    </p>
+                                    <table>
+                                        <tr>
+                                            <td>$\gamma$</td>
+                                            <td>0.99</td>
+                                        </tr>
+                                        <tr>
+                                            <td>learning rate</td>
+                                            <td>0.003</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+
+                <p>
+                    The traineds models policy can be viewed in the following video:
+                </p>
+                <div class="video">
+                    <video width="500" height="340" controls>
+                        <source src="vid/lab3_lunarlander_reinforce.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <h4>Actor-Critic</h4>
+                <p>
+                    Actor-Critic algorithms can be seen as a mixture between Policy-based and Value-based approaches.
+                    Two networks (or one network with two heads) are trained where the critic network estimates the
+                    value-function $V(s)$ and the actor network returns the policy $\pi(s,a)$.<br>
+                    Using the value-function and the total discounted reward $G_t$
+                    per episode, it is now possible to calculate the so-called advantage $A$:
+
+                    \begin{equation}A = G_t - V(s)\end{equation}
+
+                    If the actual reward is larger than the one estimated by the value-function, this advantage is
+                    positive. If reward is smaller, it is negative. This reward then gets used to amplify the update of
+                    the policy:
+
+                    \begin{equation}\nabla J(\theta) = \nabla_\theta log \pi(s,a) * G_t\end{equation}
+
+                    This helps the algorithm to perform positive policy updates for unexpectedly desirable outcomes and
+                    vice versa. We set the same reward threshold of 200 to evaluate the algorithm. While it does not
+                    reach the sample efficiency of DQN, it clearly outperforms the REINFORCE algorithm, which is
+                    expected as Actor-Critic is further developed algorithm of the family of policy gradient-based
+                    approaches.
+                </p>
+
+                <figure>
+                    <div class="single-slide">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="images/blogs/ai/lab3_ac.png" class="d-block photo-item"
+                                        data-fancybox="gallery">
+                                        <img src="images/blogs/ai/lab3_ac.png" alt="Learning Curve Actor Critic"
+                                            class="img-fluid">
+                                        <div class="photo-text-more">
+                                            <span class="icon icon-search"></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-6">
+                                    <p><br>
+                                        Our implementation of the Actor-Critic algorithm scored the best with the
+                                        following
+                                        parameters
+                                    </p>
+                                    <table>
+                                        <tr>
+                                            <td>$\gamma$</td>
+                                            <td>0.99</td>
+                                        </tr>
+                                        <tr>
+                                            <td>learning rate</td>
+                                            <td>0.005</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </figure>
+                <p>
+                    The traineds models policy can be viewed in the following video:
+                </p>
+                <div class="video">
+                    <video width="500" height="340" controls>
+                        <source src="vid/lab3_lunarlander_actorcritic.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <div id="disqus_thread"></div>
+            <script>
+                /**
+                 *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+                 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+                /**
+                var disqus_config = function () {
+                this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+                };
+                **/
+                (function () { // DON'T EDIT BELOW THIS LINE
+                    var d = document,
+                        s = d.createElement('script');
+                    s.src = 'https://blackprism.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered
+                    by Disqus.</a></noscript>
+
+        </div>
+    </section>
+
+
+    <!-- ##### Footer Area Start ##### -->
+    <footer class="footer-area">
+        <!-- Footer Logo -->
+        <div class="footer-logo mb-100">
+            <a href="index.html">The Black Prism</a>
+        </div>
+    </footer>
+    <!-- ##### Footer Area Start ##### -->
+
+    <div id="particles-js"></div>
+    <!-- ##### All Javascript Script ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/bootstrap/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap/bootstrap.min.js"></script>
+    <!-- All Plugins js -->
+    <script src="js/plugins/plugins.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    <!-- Gallery js -->
+    <script src="js/jquery/jquery.fancybox.min.js"></script>
+    <script src="js/jquery/jquery.magnific-popup.min.js"></script>
+    <script src="js/gallery-main.js"></script>
+
+    <!-- Equations -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

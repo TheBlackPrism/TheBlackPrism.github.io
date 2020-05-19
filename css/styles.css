@@ -509,6 +509,11 @@ img {
     color: #ffffff;
 }
 
+.video {
+    width: 520px;
+    margin: 0 auto;
+}
+
 /* :: 1.0 Bot */
 .bot {
     background-color: #000000;
