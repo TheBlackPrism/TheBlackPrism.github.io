@@ -904,7 +904,7 @@ img {
     margin: 0px;
 }
 
-.about img {
+.about > img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -912,7 +912,16 @@ img {
     margin-bottom: 20px;
     max-height: 400px;
 }
-
+.badge-container {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin: 10px 0px 10px 0px;
+}
+.badge-container img{
+    text-align: center;
+    margin: 10px 5px 10px 5px;
+}
 .blogpreview {
     cursor: pointer;
     transition-duration: 1000ms;
